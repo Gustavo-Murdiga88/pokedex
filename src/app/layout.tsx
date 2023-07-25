@@ -2,9 +2,13 @@ import "./globals.css";
 import React from "react";
 
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto({
+	weight: ["400", "500", "700", "900"],
+	variable: "--roboto",
+	subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
 	title: "Pokédex",
@@ -18,7 +22,11 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="pt-BR">
-			<body className={inter.className}>{children}</body>
+			<body
+				className={`${roboto.className} ${roboto.variable} mx-auto w-full max-w-max`}
+			>
+				{children}
+			</body>
 		</html>
 	);
 }

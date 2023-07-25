@@ -1,5 +1,1 @@
-import { SplashScreen } from "./components/presenters/splash_screen/page";
-
-export default function Home() {
-	return <SplashScreen />;
-}
+export { default } from "../app/home";
