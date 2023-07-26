@@ -18,7 +18,7 @@ export function Card() {
 					<Tag />
 				</div>
 			</div>
-			<div className="relative h-full flex-1">
+			<div className="relative ml-auto h-full max-w-[214px] flex-1">
 				<Img
 					className="absolute right-0 top-0 blur-[6px]"
 					src={pokebool}
@@ -47,7 +47,7 @@ export function Card() {
 export function Tag() {
 	return (
 		<span className="flex min-w-[64px] gap-[4px] rounded-full bg-green400 px-2 py-1 text-sm font-regular text-gray50">
-			<Img src={grass} height={9} width={9} alt="Icon" className="flex-1" />
+			<Img src={grass} height={12} width={12} alt="Icon" />
 			Grass
 		</span>
 	);

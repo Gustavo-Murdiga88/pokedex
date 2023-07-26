@@ -1,37 +1,46 @@
-import Img from "next/image";
+"use client";
 
-import brand from "../../../assets/icons/brand.svg";
-import pokeboll from "../../../assets/icons/pokeball.svg";
-import { Home, User, Bell, Settings } from "lucide-react";
+import { PokeBoll } from "@/util/icons";
+import { Home, User, Bell, Settings, Heart } from "lucide-react";
+import { toast } from "react-toastify";
 
 export function HeaderDesktop() {
-	return (
-		<header className="mt-16">
-			<div className="mt-8 flex items-center justify-center">
-				<Img src={brand} alt="bug" height={60} width={149}></Img>
-			</div>
+	const notify = () => {
+		toast.success("Success Notification !", {
+			icon: <Heart className="fill-red stroke-black" />,
+		});
 
-			<div className="mt-8 flex items-center justify-between px-[7.75rem] py-[1.375rem]">
-				<div className="flex items-center justify-start gap-[40px]">
-					<button className="flex items-center justify-center gap-[8px]  py-1 text-2xl font-bold">
-						<Home size={28} />
+		toast.error("Success Notification !", {
+			icon: <Heart className=" stroke-black" />,
+		});
+	};
+
+	return (
+		<header className="mx-auto px-8">
+			<div className="mt-8 flex items-center justify-between  py-[22px]">
+				<div className="flex items-center justify-start gap-[32px]">
+					<button
+						onClick={notify}
+						className="group flex items-center justify-center gap-[8px] rounded-2xl px-2 py-1  text-2xl font-bold text-gray500 hover:text-red"
+					>
+						<Home size={25} className="group-hover:stroke-red" />
 						Home
 					</button>
-					<button className="flex items-center justify-center gap-[8px]  py-1 text-2xl font-bold">
-						<Img src={pokeboll} alt="bug" height={28} width={29} />
+					<button className="group flex items-center justify-center gap-[8px] rounded-2xl px-2 py-1  text-2xl font-bold text-gray500 hover:text-red">
+						<PokeBoll className="fill-gray500 group-hover:fill-red" size={25} />
 						Favoritos
-					</button>{" "}
-					<button className="flex items-center justify-center gap-[8px]  py-1 text-2xl font-bold">
-						<User size={28} />
+					</button>
+					<button className="group flex items-center justify-center gap-[8px] rounded-2xl px-2 py-1  text-2xl font-bold text-gray500 hover:text-red">
+						<User size={25} className="group-hover:stroke-red" />
 						Perfil
 					</button>
 				</div>
 				<div className="flex items-center justify-start gap-[46px]">
-					<button className="flex items-center justify-center gap-[8px]  py-1 text-2xl font-bold">
-						<Bell size={28} />
-					</button>{" "}
-					<button className="flex items-center justify-center gap-[8px]  py-1 text-2xl font-bold">
-						<Settings size={28} />
+					<button className="group flex items-center justify-center gap-[8px] rounded-2xl px-2 py-1  text-2xl font-bold text-gray500 hover:text-red">
+						<Bell size={25} className="group-hover:stroke-red" />
+					</button>
+					<button className="group flex items-center justify-center gap-[8px] rounded-2xl px-2 py-1  text-2xl font-bold text-gray500 hover:text-red">
+						<Settings size={25} className="group-hover:stroke-red" />
 					</button>
 				</div>
 			</div>

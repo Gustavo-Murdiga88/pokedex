@@ -80,6 +80,7 @@ module.exports = {
 
 		maxWidth: {
 			max: "1440px",
+			"card-content": "1225px",
 		},
 
 		extend: {
@@ -92,6 +93,10 @@ module.exports = {
 				water: "linear-gradient(180deg, #20C5F5 0%, #157C9A 100%)",
 				grass: "linear-gradient(180deg, #70D090 0%, #55A23A 100%)",
 			},
+		},
+
+		backgroundImage: {
+			pokeBoll: "url(/src/app/assets/icons/pokeball.svg)",
 		},
 	},
 	plugins: [],
