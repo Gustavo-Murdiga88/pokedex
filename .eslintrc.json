@@ -32,6 +32,8 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-debugger":"warn",
+    "tailwindcss/no-custom-classname":"off",
     "prettier/prettier": [
       "error",
       {

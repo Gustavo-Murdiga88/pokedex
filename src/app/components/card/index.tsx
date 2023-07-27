@@ -46,9 +46,18 @@ export function Card() {
 
 export function Tag() {
 	return (
-		<span className="flex min-w-[64px] gap-[4px] rounded-full bg-green400 px-2 py-1 text-sm font-regular text-gray50">
-			<Img src={grass} height={12} width={12} alt="Icon" />
-			Grass
+		<span className="flex min-w-[64px] rounded-full bg-green400  py-1 pl-0 pr-2 text-sm font-regular text-gray50">
+			<Img
+				src={grass}
+				alt="Icon"
+				style={{
+					height: 18,
+					marginLeft: "2px",
+					width: 20,
+					objectFit: "cover",
+				}}
+			/>
+			<span className="pt-[1px]">Grass</span>
 		</span>
 	);
 }

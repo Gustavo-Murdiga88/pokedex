@@ -1,6 +1,10 @@
 import Img from "next/image";
 
+import { About } from "./components/about";
 import { Button } from "./components/button";
+import { Evolution } from "./components/evolution";
+import { Moves } from "./components/moves";
+import { Stats } from "./components/stats";
 
 import pokebool from "../../assets/icons/pokeballEclipse.png";
 import { Tag } from "../card";
@@ -10,7 +14,6 @@ export function Modal() {
 	return (
 		<div className="relative mx-auto max-h-[789px] w-[524px] drop-shadow-card">
 			<div
-				className="h-[789px] w-[524px]"
 				style={{
 					maskImage: "url(/assets/rectangle.svg)",
 					WebkitMaskImage: "url(/assets/rectangle.svg)",
@@ -37,26 +40,18 @@ export function Modal() {
 				</button>
 			</div>
 
-			<main className=" absolute top-[240px] flex h-[561px] flex-col bg-gray50">
+			<main className=" absolute inset-x-0 top-[240px] flex h-[561px] flex-col bg-gray50">
 				<div className="mb-[20px] mt-[50px] flex justify-between px-[40px]">
 					<Button active={false}>About</Button>
-					<Button active>Stats</Button>
+					<Button active={false}>Stats</Button>
 					<Button active={false}>Evolution</Button>
-					<Button active={false}>Moves</Button>
+					<Button active>Moves</Button>
 				</div>
-				<div className="flex flex-1 flex-col gap-8 bg-gray100 px-16 pb-[53px] pt-[40px]">
-					<span>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nam
-						eum magnam ea modi asperiores sit harum, et eveniet. Totam dolore
-					</span>
-					<span>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nam
-						eum magnam ea modi asperiores sit harum, et eveniet. Totam dolore
-					</span>
-					<span>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nam
-						eum magnam ea modi asperiores sit harum, et eveniet. Totam dolore
-					</span>
+				<div className="flex flex-1 shrink-0 flex-col gap-8 bg-gray100 px-16 pb-[53px] pt-[40px]">
+					{/* <About /> */}
+					{/* <Stats /> */}
+					{/* <Evolution /> */}
+					<Moves />
 				</div>
 			</main>
 			<Img

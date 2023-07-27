@@ -47,8 +47,6 @@ export default function RootLayout({
 					</div>
 					{children}
 				</main>
-
-				<Modal />
 			</body>
 		</html>
 	);
