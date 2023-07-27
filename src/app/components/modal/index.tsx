@@ -1,3 +1,5 @@
+"use client";
+
 import Img from "next/image";
 
 import { About } from "./components/about";
@@ -8,21 +10,36 @@ import { Stats } from "./components/stats";
 
 import pokebool from "../../assets/icons/pokeballEclipse.png";
 import { Tag } from "../card";
+import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import { Heart } from "lucide-react";
 
 export function Modal() {
+	const screenSmallerThan524 = useMediaQuery("(max-width: 524px)");
+
+	const mask = screenSmallerThan524
+		? "url(/assets/rectangle_mobile.svg)"
+		: "url(/assets/rectangle.svg)";
+
 	return (
-		<div className="relative mx-auto max-h-[789px] w-[524px] drop-shadow-card">
+		<div
+			className={`${
+				screenSmallerThan524 !== null ? "" : "hidden"
+			} relative mx-auto max-h-[624px] w-[430px] drop-shadow-card min-[524px]:h-[789px] min-[524px]:w-[524px]`}
+		>
 			<div
+				className="w-[430px] min-[524px]:w-[524px]"
 				style={{
-					maskImage: "url(/assets/rectangle.svg)",
-					WebkitMaskImage: "url(/assets/rectangle.svg)",
+					maskImage: mask,
+					maskSize: "contain",
+					maskRepeat: "no-repeat",
+					WebkitMaskRepeat: "no-repeat",
+					WebkitMaskImage: mask,
 				}}
 			>
 				<header className="relative flex h-[240px] justify-end bg-fire">
-					<div className="mb-4 mr-[39px] mt-auto flex h-[105px] w-[223px] flex-col items-start gap-1">
+					<div className="mb-4 ml-auto mr-[12px] mt-auto flex h-[105px] flex-col items-start gap-1 min-[524px]:mr-[39px]">
 						<span className="text-md font-regular text-gray50">#004</span>
-						<span className="mb-2 text-5xl font-extraBold leading-none text-gray50">
+						<span className="mb-2 text-4xl font-extraBold leading-none text-gray50 min-[524px]:text-5xl">
 							Charmander
 						</span>
 						<Tag />
@@ -36,7 +53,7 @@ export function Modal() {
 					/>
 				</header>
 				<button className="absolute right-[17px] top-[50px] rounded-md p-0 leading-none">
-					<Heart size={40} />
+					<Heart size={screenSmallerThan524 ? 35 : 40} />
 				</button>
 			</div>
 
@@ -47,7 +64,7 @@ export function Modal() {
 					<Button active={false}>Evolution</Button>
 					<Button active>Moves</Button>
 				</div>
-				<div className="flex flex-1 shrink-0 flex-col gap-8 bg-gray100 px-16 pb-[53px] pt-[40px]">
+				<div className="flex flex-1 flex-col gap-8 bg-gray100 px-16 pb-[53px] pt-[40px]">
 					{/* <About /> */}
 					{/* <Stats /> */}
 					{/* <Evolution /> */}
