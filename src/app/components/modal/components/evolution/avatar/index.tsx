@@ -69,7 +69,7 @@ export function PokeAvatar({
       ${loading ? "invisible" : ""}
       `}
 			>
-				<Tag />
+				<Tag type="water" />
 			</div>
 		</div>
 	);

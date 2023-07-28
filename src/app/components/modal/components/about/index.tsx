@@ -8,8 +8,8 @@ import weight from "../../../../assets/icons/weight.svg";
 
 export function About() {
 	return (
-		<>
-			<span className="text-lg font-regular leading-[24px] text-gray500">
+		<div className="flex h-full w-full flex-col gap-8">
+			<span className="inline-block break-words text-lg font-regular leading-[24px] text-gray500">
 				From the time it is born, a flame burns at the tip of its tail. Its life
 				would end if the flame were to go out.
 			</span>
@@ -53,20 +53,20 @@ export function About() {
 				<div>
 					<span>Weakenes</span>
 					<div className="mt-3 flex gap-2">
-						<Tag />
-						<Tag />
-						<Tag />
+						<Tag type="eletric" />
+						<Tag type="eletric" />
+						<Tag type="eletric" />
 					</div>
 				</div>
 				<div>
 					<span>Weakenes</span>
 					<div className="mt-3 flex gap-2">
-						<Tag />
-						<Tag />
-						<Tag />
+						<Tag type="eletric" />
+						<Tag type="eletric" />
+						<Tag type="eletric" />
 					</div>
 				</div>
 			</footer>
-		</>
+		</div>
 	);
 }

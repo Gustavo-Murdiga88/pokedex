@@ -30,8 +30,8 @@ export const Theme = {
 		purple300: "#A98DF8",
 		purple400: "#6114BC",
 
-		orage100: "#F8A801",
-		orage200: "#EC8C4C",
+		orange100: "#F8A801",
+		orange200: "#EC8C4C",
 
 		red: "#F10A34",
 
@@ -46,6 +46,7 @@ export const Theme = {
 		blue200: "#265DFC",
 		blue300: "#0804B4",
 
+		cyan50: "#9EC4DD",
 		cyan100: "#8FC3E9",
 		cyan200: "#AACBE1",
 		cyan300: "#B7DBFF",

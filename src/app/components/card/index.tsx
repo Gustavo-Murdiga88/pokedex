@@ -1,7 +1,9 @@
+/* eslint-disable tailwindcss/classnames-order */
 import Img from "next/image";
 
-import grass from "../../assets/icons/grass.svg";
 import pokebool from "../../assets/icons/pokeballEclipse.png";
+import { MappingTag, TagsTypeProps } from "./types";
+import { Theme } from "@/app/styles/design";
 import { Heart } from "lucide-react";
 
 export function Card() {
@@ -14,8 +16,8 @@ export function Card() {
 
 				<span className="text-3xl font-bold leading-none">Bulbasaur</span>
 				<div className="flex items-center justify-start gap-[8px]">
-					<Tag />
-					<Tag />
+					<Tag type="bug" />
+					<Tag type="dragon" />
 				</div>
 			</div>
 			<div className="relative ml-auto h-full max-w-[214px] flex-1">
@@ -44,20 +46,28 @@ export function Card() {
 	);
 }
 
-export function Tag() {
+interface ITagProps {
+	type: TagsTypeProps;
+}
+
+export function Tag({ type }: ITagProps) {
+	const { color, icon, name } = MappingTag[type];
+
 	return (
-		<span className="flex min-w-[64px] rounded-full bg-green400  py-1 pl-0 pr-2 text-sm font-regular text-gray50">
+		<span
+			className="flex rounded-full px-2 py-1 pr-3 text-sm font-regular text-gray50"
+			style={{
+				backgroundColor: Theme.colors[color],
+			}}
+		>
 			<Img
-				src={grass}
-				alt="Icon"
-				style={{
-					height: 18,
-					marginLeft: "2px",
-					width: 20,
-					objectFit: "cover",
-				}}
+				className="object-cover"
+				src={icon}
+				alt={name}
+				width={18}
+				height={20}
 			/>
-			<span className="pt-[1px]">Grass</span>
+			<span className="text-lg font-regular">{name}</span>
 		</span>
 	);
 }

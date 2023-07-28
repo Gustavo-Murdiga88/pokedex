@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import Img from "next/image";
 
-import { Modal } from "./components/modal";
+import "./styles/react_bottom_shet.css";
 
 import brand from "./assets/icons/brand.svg";
 import { ToastContainer } from "react-toastify";

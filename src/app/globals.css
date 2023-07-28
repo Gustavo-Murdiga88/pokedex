@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.6);
+  --rsbs-bg: "transparent";
+  --rsbs-handle-bg: "transparent";
+  --rsbs-max-w: auto;
+  --rsbs-ml: env(safe-area-inset-left);
+  --rsbs-mr: env(safe-area-inset-right);
+  --rsbs-overlay-rounded: 16px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +33,67 @@ a {
   box-shadow: 0 0 0 2px #265dfc;
 }
 
-#pokemon{
+#pokemon {
   transform: rotateY(180deg);
 }
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slide-to-left {
+  to {
+    transform: translateX(-30px);
+  }
+}
+
+::view-transition-old(root) {
+  animation:
+    90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+::view-transition-new(root) {
+  animation:
+    210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+    300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+#tabs_scroll[data-index="stats"] {
+  transition: transform 500ms ease-in-out;
+
+  transform: translate3d(-460px, 0px, 0px);
+}
+
+#tabs_scroll[data-index="evolution"] {
+  transition: transform 500ms ease-in-out;
+
+  transform: translate3d(-920px, 0px, 0px);
+}
+
+#tabs_scroll[data-index="moves"] {
+  transition: transform 500ms ease-in-out;
+
+  transform: translate3d(-1380px, 0px, 0px);
+}
+
+#tabs_scroll[data-index="about"] {
+  transition: transform 500ms ease-in-out;
+
+  transform: translate3d(0px, 0px, 0px);
+}
+

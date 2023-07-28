@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 import Img from "next/image";
 
 import { About } from "./components/about";
@@ -12,27 +14,32 @@ import pokebool from "../../assets/icons/pokeballEclipse.png";
 import { Tag } from "../card";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import { Heart } from "lucide-react";
+import { BottomSheet } from "react-spring-bottom-sheet";
 
-export function Modal() {
+type TabsProps = "about" | "stats" | "evolution" | "moves";
+
+function Component() {
+	const [active, setActive] = useState<TabsProps>("about");
+
 	const screenSmallerThan524 = useMediaQuery("(max-width: 524px)");
 
 	const mask = screenSmallerThan524
 		? "url(/assets/rectangle_mobile.svg)"
 		: "url(/assets/rectangle.svg)";
 
+	function handleChangeTabs(value: TabsProps) {
+		setActive(value);
+	}
+
 	return (
 		<div
 			className={`${
-				screenSmallerThan524 !== null ? "" : "hidden"
-			} relative mx-auto max-h-[624px] w-[430px] drop-shadow-card min-[524px]:h-[789px] min-[524px]:w-[524px]`}
+				screenSmallerThan524 !== null ? "" : "invisible"
+			} relative mx-auto h-[624px] w-[430px] drop-shadow-card min-[524px]:h-[840px] min-[524px]:w-[524px]`}
 		>
 			<div
-				className="w-[430px] min-[524px]:w-[524px]"
 				style={{
 					maskImage: mask,
-					maskSize: "contain",
-					maskRepeat: "no-repeat",
-					WebkitMaskRepeat: "no-repeat",
 					WebkitMaskImage: mask,
 				}}
 			>
@@ -42,7 +49,10 @@ export function Modal() {
 						<span className="mb-2 text-4xl font-extraBold leading-none text-gray50 min-[524px]:text-5xl">
 							Charmander
 						</span>
-						<Tag />
+						<div className="flex w-full gap-2">
+							<Tag type="dark" />
+							<Tag type="ghost" />
+						</div>
 					</div>
 					<Img
 						className="absolute bottom-[-10px] left-[20px] blur-[6px]"
@@ -57,21 +67,64 @@ export function Modal() {
 				</button>
 			</div>
 
-			<main className=" absolute inset-x-0 top-[240px] flex h-[561px] flex-col bg-gray50">
+			<main className="absolute inset-x-0 top-[240px] flex h-[613px] flex-col rounded-b-xl bg-gray50">
 				<div className="mb-[20px] mt-[50px] flex justify-between px-[40px]">
-					<Button active={false}>About</Button>
-					<Button active={false}>Stats</Button>
-					<Button active={false}>Evolution</Button>
-					<Button active>Moves</Button>
+					<Button
+						active={active === "about"}
+						onClick={() => {
+							handleChangeTabs("about");
+						}}
+					>
+						About
+					</Button>
+					<Button
+						active={active === "stats"}
+						onClick={() => {
+							handleChangeTabs("stats");
+						}}
+					>
+						Stats
+					</Button>
+					<Button
+						active={active === "evolution"}
+						onClick={() => {
+							handleChangeTabs("evolution");
+						}}
+					>
+						Evolution
+					</Button>
+					<Button
+						active={active === "moves"}
+						onClick={() => {
+							handleChangeTabs("moves");
+						}}
+					>
+						Moves
+					</Button>
 				</div>
-				<div className="flex flex-1 flex-col gap-8 bg-gray100 px-16 pb-[53px] pt-[40px]">
-					{/* <About /> */}
-					{/* <Stats /> */}
-					{/* <Evolution /> */}
-					<Moves />
+				<div className="overflow-hidden px-16 pb-[53px] pt-[40px]">
+					<div
+						data-index={active}
+						id="tabs_scroll"
+						className="flex h-full gap-16"
+					>
+						<div className="flex min-w-[396px]">
+							<About />
+						</div>
+						<div className="flex min-w-[396px]">
+							<Stats />
+						</div>
+						<div className="flex min-w-[396px]">
+							<Evolution />
+						</div>
+						<div className="flex min-w-[396px]">
+							<Moves />
+						</div>
+					</div>
 				</div>
 			</main>
 			<Img
+				draggable={false}
 				id="pokemon"
 				className="absolute left-[20px] top-[30px]"
 				src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
@@ -80,5 +133,32 @@ export function Modal() {
 				alt="Pokemon"
 			/>
 		</div>
+	);
+}
+
+export function Modal() {
+	const [open, setOpen] = useState(false);
+
+	return (
+		<>
+			<button
+				onClick={() => {
+					setOpen(!open);
+				}}
+			>
+				oi
+			</button>
+			<BottomSheet
+				open={open}
+				expandOnContentDrag
+				scrollLocking
+				onDismiss={() => {
+					setOpen(!open);
+				}}
+				snapPoints={({ minHeight, maxHeight }) => [minHeight, maxHeight * 0.9]}
+			>
+				<Component />
+			</BottomSheet>
+		</>
 	);
 }
