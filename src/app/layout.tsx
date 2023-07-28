@@ -5,11 +5,11 @@ import "react-toastify/dist/ReactToastify.css";
 
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-import Img from "next/image";
 
 import "./styles/react_bottom_shet.css";
 
-import brand from "./assets/icons/brand.svg";
+import { Header } from "./components/header";
+
 import { ToastContainer } from "react-toastify";
 
 const roboto = Roboto({
@@ -42,9 +42,7 @@ export default function RootLayout({
 					closeButton={false}
 				/>
 				<main className="mx-auto max-w-card-content">
-					<div className="mt-8 flex items-center justify-center">
-						<Img src={brand} alt="bug" height={60} width={149}></Img>
-					</div>
+					<Header />
 					{children}
 				</main>
 			</body>

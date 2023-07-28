@@ -11,153 +11,190 @@ import { Moves } from "./components/moves";
 import { Stats } from "./components/stats";
 
 import pokebool from "../../assets/icons/pokeballEclipse.png";
-import { Tag } from "../card";
+import { TagsTypeProps } from "../card/types";
+import { Tag } from "../tag";
 import { useMediaQuery } from "@/app/hooks/useMediaQuery";
 import { Heart } from "lucide-react";
 import { BottomSheet } from "react-spring-bottom-sheet";
 
 type TabsProps = "about" | "stats" | "evolution" | "moves";
 
-function Component() {
+interface IModalProps {
+	open: boolean;
+	handleCancel: () => void;
+	pokemon: {
+		name: string;
+		id: number;
+		tags: TagsTypeProps[];
+		hash: string;
+	};
+}
+
+function Component({ id, name, tags, hash }: IModalProps["pokemon"]) {
 	const [active, setActive] = useState<TabsProps>("about");
 
 	const screenSmallerThan524 = useMediaQuery("(max-width: 524px)");
 
 	const mask = screenSmallerThan524
-		? "url(/assets/rectangle_mobile.svg)"
+		? "url(/assets/rectangle_mobile_sm.svg)"
 		: "url(/assets/rectangle.svg)";
 
 	function handleChangeTabs(value: TabsProps) {
 		setActive(value);
 	}
 
-	return (
-		<div
-			className={`${
-				screenSmallerThan524 !== null ? "" : "invisible"
-			} relative mx-auto h-[624px] w-[430px] drop-shadow-card min-[524px]:h-[840px] min-[524px]:w-[524px]`}
-		>
-			<div
-				style={{
-					maskImage: mask,
-					WebkitMaskImage: mask,
-				}}
-			>
-				<header className="relative flex h-[240px] justify-end bg-fire">
-					<div className="mb-4 ml-auto mr-[12px] mt-auto flex h-[105px] flex-col items-start gap-1 min-[524px]:mr-[39px]">
-						<span className="text-md font-regular text-gray50">#004</span>
-						<span className="mb-2 text-4xl font-extraBold leading-none text-gray50 min-[524px]:text-5xl">
-							Charmander
-						</span>
-						<div className="flex w-full gap-2">
-							<Tag type="dark" />
-							<Tag type="ghost" />
-						</div>
-					</div>
-					<Img
-						className="absolute bottom-[-10px] left-[20px] blur-[6px]"
-						src={pokebool}
-						width={181}
-						height={181}
-						alt="pokeboll"
-					/>
-				</header>
-				<button className="absolute right-[17px] top-[50px] rounded-md p-0 leading-none">
-					<Heart size={screenSmallerThan524 ? 35 : 40} />
-				</button>
-			</div>
+	const headerClassName = (() => {
+		const type = tags[0];
 
-			<main className="absolute inset-x-0 top-[240px] flex h-[613px] flex-col rounded-b-xl bg-gray50">
-				<div className="mb-[20px] mt-[50px] flex justify-between px-[40px]">
-					<Button
-						active={active === "about"}
-						onClick={() => {
-							handleChangeTabs("about");
-						}}
-					>
-						About
-					</Button>
-					<Button
-						active={active === "stats"}
-						onClick={() => {
-							handleChangeTabs("stats");
-						}}
-					>
-						Stats
-					</Button>
-					<Button
-						active={active === "evolution"}
-						onClick={() => {
-							handleChangeTabs("evolution");
-						}}
-					>
-						Evolution
-					</Button>
-					<Button
-						active={active === "moves"}
-						onClick={() => {
-							handleChangeTabs("moves");
-						}}
-					>
-						Moves
-					</Button>
+		if (type === "eletric") {
+			return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-eletric";
+		}
+
+		if (type === "fire") {
+			return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-fire";
+		}
+
+		if (type === "water")
+			return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-water";
+
+		return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-grass";
+	})();
+
+	return (
+		<div className="mx-auto h-[740px] w-[400px] overflow-hidden bp-1:h-[840px]  bp-1:w-[524px] bp-1-[600px]:rounded-b-lg">
+			<div
+				className={`${
+					screenSmallerThan524 !== null ? "" : "invisible"
+				} relative mx-auto rounded-b-xl drop-shadow-card 
+			`}
+			>
+				<div
+					style={{
+						maskImage: mask,
+						WebkitMaskImage: mask,
+					}}
+				>
+					<header className={headerClassName}>
+						<div className="mb-2 mr-[12px] mt-auto flex h-[105px] flex-col items-start gap-1 bp-1:mb-4 bp-1:ml-auto min-[524px]:mr-[39px]">
+							<span className="text-md font-regular text-gray50">{hash}</span>
+							<span className="mb-2 text-3xl font-extraBold leading-none text-gray50 bp-1:text-5xl">
+								{name}
+							</span>
+							<div className="flex w-full gap-2">
+								{tags.map((type) => {
+									return <Tag type={type} key={type} />;
+								})}
+							</div>
+						</div>
+						<Img
+							className="absolute bottom-[-10px] left-[20px] h-[155px] blur-[6px] bp-1:h-[181px] bp-1:w-[181px]"
+							src={pokebool}
+							style={{
+								objectFit: "contain",
+								objectPosition: " 50% 50%",
+							}}
+							width={135}
+							height={155}
+							alt="pokeboll"
+						/>
+					</header>
+					<button className="absolute right-[17px] top-[50px] rounded-md p-0 leading-none">
+						<Heart size={screenSmallerThan524 ? 35 : 40} />
+					</button>
 				</div>
-				<div className="overflow-hidden px-16 pb-[53px] pt-[40px]">
-					<div
-						data-index={active}
-						id="tabs_scroll"
-						className="flex h-full gap-16"
-					>
-						<div className="flex min-w-[396px]">
-							<About />
-						</div>
-						<div className="flex min-w-[396px]">
-							<Stats />
-						</div>
-						<div className="flex min-w-[396px]">
-							<Evolution />
-						</div>
-						<div className="flex min-w-[396px]">
-							<Moves />
+
+				<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 bp-1:top-[240px]">
+					<div className="my-[20px] flex justify-between px-[40px] min-[600px]:mt-[50px]">
+						<Button
+							active={active === "about"}
+							onClick={() => {
+								handleChangeTabs("about");
+							}}
+						>
+							About
+						</Button>
+						<Button
+							active={active === "stats"}
+							onClick={() => {
+								handleChangeTabs("stats");
+							}}
+						>
+							Stats
+						</Button>
+						<Button
+							active={active === "evolution"}
+							onClick={() => {
+								handleChangeTabs("evolution");
+							}}
+						>
+							Evolution
+						</Button>
+						<Button
+							active={active === "moves"}
+							onClick={() => {
+								handleChangeTabs("moves");
+							}}
+						>
+							Moves
+						</Button>
+					</div>
+					<div className="overflow-hidden rounded-b-xl bg-gray100 px-8 pb-[30px] pt-[40px] bp-1:px-16 bp-1:pb-[53px]">
+						<div
+							data-index={active}
+							id="tabs_scroll"
+							className="flex h-full gap-8 bp-1:gap-16"
+						>
+							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
+								<About />
+							</div>
+							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
+								<Stats />
+							</div>
+							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
+								<Evolution />
+							</div>
+							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
+								<Moves />
+							</div>
 						</div>
 					</div>
-				</div>
-			</main>
-			<Img
-				draggable={false}
-				id="pokemon"
-				className="absolute left-[20px] top-[30px]"
-				src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
-				width={236}
-				height={251}
-				alt="Pokemon"
-			/>
+				</main>
+				<Img
+					draggable={false}
+					id="pokemon"
+					style={{
+						objectFit: "contain",
+						objectPosition: " 50% 50%",
+					}}
+					className="absolute left-[20px] top-[25px] bp-1:h-[251px] bp-1:w-[236px]"
+					src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+					width={204}
+					height={216}
+					alt="Pokemon"
+				/>
+			</div>
 		</div>
 	);
 }
 
-export function Modal() {
-	const [open, setOpen] = useState(false);
-
+export function Modal({ handleCancel, open, pokemon }: IModalProps) {
 	return (
 		<>
-			<button
-				onClick={() => {
-					setOpen(!open);
-				}}
-			>
-				oi
-			</button>
 			<BottomSheet
 				open={open}
 				expandOnContentDrag
 				scrollLocking
-				onDismiss={() => {
-					setOpen(!open);
+				onDismiss={handleCancel}
+				snapPoints={({ minHeight, maxHeight }) => {
+					return [minHeight, maxHeight * 0.975];
 				}}
-				snapPoints={({ minHeight, maxHeight }) => [minHeight, maxHeight * 0.9]}
 			>
-				<Component />
+				<Component
+					id={pokemon.id}
+					name={pokemon.name}
+					tags={pokemon.tags}
+					hash={pokemon.hash}
+				/>
 			</BottomSheet>
 		</>
 	);

@@ -1,7 +1,7 @@
 import Img from "next/image";
 import Link from "next/link";
 
-import { HeaderDesktop } from "../components/header/desktop";
+import { HeaderDesktop } from "../components/navigation/desktop";
 
 import git from "../assets/icons/git.svg";
 import insta from "../assets/icons/insta.svg";

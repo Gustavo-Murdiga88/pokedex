@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.6);
+  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.8);
   --rsbs-bg: "transparent";
   --rsbs-handle-bg: "transparent";
   --rsbs-max-w: auto;
@@ -95,5 +95,32 @@ a {
   transition: transform 500ms ease-in-out;
 
   transform: translate3d(0px, 0px, 0px);
+}
+
+@media (max-width: 524px) {
+  #tabs_scroll[data-index="stats"] {
+    transition: transform 500ms ease-in-out;
+  
+    transform: translate3d(-368px, 0px, 0px);
+  }
+  
+  #tabs_scroll[data-index="evolution"] {
+    transition: transform 500ms ease-in-out;
+  
+    transform: translate3d(-736px, 0px, 0px);
+  }
+  
+  #tabs_scroll[data-index="moves"] {
+    transition: transform 500ms ease-in-out;
+  
+    transform: translate3d(-1104px, 0px, 0px);
+  }
+  
+  #tabs_scroll[data-index="about"] {
+    transition: transform 500ms ease-in-out;
+  
+    transform: translate3d(0px, 0px, 0px);
+  }
+  
 }
 

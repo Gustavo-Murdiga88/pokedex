@@ -1,6 +1,6 @@
 import Img from "next/image";
 
-import { Tag } from "@/app/components/card";
+import { Tag } from "../../../../components/tag";
 
 import genere from "../../../../assets/icons/genere.svg";
 import height from "../../../../assets/icons/height.svg";
@@ -8,7 +8,7 @@ import weight from "../../../../assets/icons/weight.svg";
 
 export function About() {
 	return (
-		<div className="flex h-full w-full flex-col gap-8">
+		<div className="flex h-full w-full flex-col gap-4 min-[600px]:gap-8">
 			<span className="inline-block break-words text-lg font-regular leading-[24px] text-gray500">
 				From the time it is born, a flame burns at the tip of its tail. Its life
 				would end if the flame were to go out.

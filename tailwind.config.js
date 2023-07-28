@@ -32,7 +32,11 @@ module.exports = {
 		},
 
 		dropShadow: {
-			card: "2px -4px 8px rgba(0, 0, 0, 0.25)",
+			card: "2px -1px 5px rgba(0, 0, 0, 0.25)",
+		},
+
+		screens: {
+			"bp-1": "524px",
 		},
 	},
 	plugins: [],

@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import Img from "next/image";
 
-import { Tag } from "@/app/components/card";
+import { Tag } from "../../../../../components/tag";
 
 import { MoveRight } from "lucide-react";
 

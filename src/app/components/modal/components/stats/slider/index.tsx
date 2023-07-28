@@ -14,13 +14,10 @@ export function Slider({ attribute, value, color = "red" }: ISliderProps) {
 	const [width, setWidth] = useState<string | null>(null);
 	const sliderRefContainer = useRef<HTMLDivElement>(null);
 
-	console.log(width);
-
 	useEffect(() => {
 		(() => {
 			if (sliderRefContainer.current) {
 				let SLIDER_WIDTH = sliderRefContainer.current.clientWidth;
-				console.log(sliderRefContainer.current.offsetWidth);
 
 				if (SLIDER_WIDTH === 0) {
 					setWidth("w-[0%]");
@@ -41,14 +38,14 @@ export function Slider({ attribute, value, color = "red" }: ISliderProps) {
 	}, [value]);
 
 	return (
-		<div className="flex h-[19px] w-full items-center justify-start">
+		<div className="flex h-[19px] items-center justify-start">
 			<span className="mr-[20px] min-w-[59px] text-right text-lg font-regular text-gray500">
 				{attribute}
 			</span>
 			<span className="mr-[12px] text-lg font-regular text-black">{value}</span>
 			<div
 				ref={sliderRefContainer}
-				className="opacity flex h-[12px] min-w-full flex-1 rounded-full"
+				className="opacity flex h-[12px] flex-1 rounded-full"
 			>
 				<div
 					style={{
