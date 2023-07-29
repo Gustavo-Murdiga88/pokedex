@@ -1,4 +1,4 @@
-import { Colors } from "@/app/styles/design";
+import { Colors } from "@/app/styles/theme";
 
 type Props = {
 	name: string;

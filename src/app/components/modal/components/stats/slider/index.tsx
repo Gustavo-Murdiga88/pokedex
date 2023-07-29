@@ -2,7 +2,7 @@
 
 import { useRef, useState, useEffect } from "react";
 
-import { Colors, Theme } from "@/app/styles/design";
+import { Colors, Theme } from "@/app/styles/theme";
 
 interface ISliderProps {
 	attribute: string;

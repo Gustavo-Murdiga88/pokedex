@@ -1,10 +1,10 @@
 import Img from "next/image";
 
-import { Tag } from "../../../../components/tag";
+import { Tag } from "components/tag";
 
-import genere from "../../../../assets/icons/genere.svg";
-import height from "../../../../assets/icons/height.svg";
-import weight from "../../../../assets/icons/weight.svg";
+import genere from "assets/icons/genere.svg";
+import height from "assets/icons/height.svg";
+import weight from "assets/icons/weight.svg";
 
 export function About() {
 	return (

@@ -32,6 +32,7 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-async-promise-executor": "off",
     "no-debugger":"warn",
     "tailwindcss/no-custom-classname":"off",
     "prettier/prettier": [

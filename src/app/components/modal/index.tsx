@@ -184,9 +184,10 @@ export function Modal({ handleCancel, open, pokemon }: IModalProps) {
 				open={open}
 				expandOnContentDrag
 				scrollLocking
+				footer={<div className="h-[68px] bp-2:hidden bp-2:h-0 " />}
 				onDismiss={handleCancel}
 				snapPoints={({ minHeight, maxHeight }) => {
-					return [minHeight, maxHeight * 0.975];
+					return [minHeight, maxHeight * 0.8];
 				}}
 			>
 				<Component

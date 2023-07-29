@@ -1,6 +1,6 @@
 import Img from "next/image";
 
-import { Theme } from "../../styles/design";
+import { Theme } from "../../styles/theme";
 import { MappingTag, TagsTypeProps } from "../card/types";
 
 interface ITagProps {

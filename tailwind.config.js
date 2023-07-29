@@ -1,4 +1,4 @@
-import { Theme } from "./src/app/styles/design";
+import { Theme } from "./src/app/styles/theme";
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -37,6 +37,7 @@ module.exports = {
 
 		screens: {
 			"bp-1": "524px",
+			"bp-2": "600px",
 		},
 	},
 	plugins: [],
