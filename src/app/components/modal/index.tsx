@@ -1,8 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 
+import { Heart } from "lucide-react";
 import Img from "next/image";
+import { usePathname } from "next/navigation";
+import { BottomSheet } from "react-spring-bottom-sheet";
+import { toast } from "react-toastify";
+
+import { useMediaQuery } from "hooks/useMediaQuery";
+import { useFavoritePokemonsStore } from "store/favorites";
+import { IPokemonFormattedProps } from "usecases/fetch_pokemon";
+
+import pokebool from "assets/icons/pokeballEclipse.png";
 
 import { About } from "./components/about";
 import { Button } from "./components/button";
@@ -10,12 +20,7 @@ import { Evolution } from "./components/evolution";
 import { Moves } from "./components/moves";
 import { Stats } from "./components/stats";
 
-import pokebool from "../../assets/icons/pokeballEclipse.png";
-import { TagsTypeProps } from "../card/types";
 import { Tag } from "../tag";
-import { useMediaQuery } from "@/app/hooks/useMediaQuery";
-import { Heart } from "lucide-react";
-import { BottomSheet } from "react-spring-bottom-sheet";
 
 type TabsProps = "about" | "stats" | "evolution" | "moves";
 
@@ -23,14 +28,27 @@ interface IModalProps {
 	open: boolean;
 	handleCancel: () => void;
 	pokemon: {
-		name: string;
-		id: number;
-		tags: TagsTypeProps[];
+		isFavorite: boolean;
+		data: IPokemonFormattedProps;
 		hash: string;
 	};
 }
 
-function Component({ id, name, tags, hash }: IModalProps["pokemon"]) {
+function Component({ handleCancel, open, pokemon }: IModalProps) {
+	const path = usePathname();
+	const isFavoritesRoute = path.includes("favorites");
+
+	const { data, isFavorite, hash } = pokemon;
+
+	const { favoritePokemon, unFavoritePokemon } = useFavoritePokemonsStore(
+		({ favoritePokemon, unFavoritePokemon }) => {
+			return {
+				favoritePokemon,
+				unFavoritePokemon,
+			};
+		},
+	);
+
 	const [active, setActive] = useState<TabsProps>("about");
 
 	const screenSmallerThan524 = useMediaQuery("(max-width: 524px)");
@@ -44,9 +62,9 @@ function Component({ id, name, tags, hash }: IModalProps["pokemon"]) {
 	}
 
 	const headerClassName = (() => {
-		const type = tags[0];
+		const type = data.types[0].name;
 
-		if (type === "eletric") {
+		if (type === "electric") {
 			return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-eletric";
 		}
 
@@ -60,143 +78,165 @@ function Component({ id, name, tags, hash }: IModalProps["pokemon"]) {
 		return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-grass";
 	})();
 
+	function handleFavoritePokemon() {
+		const pokemonName = data.name[0].toUpperCase() + data.name.slice(1);
+		toast.success(`${pokemonName} adicionado aos favoritos!`, {
+			icon: <Heart className="fill-red" size={30} />,
+		});
+		favoritePokemon(data);
+	}
+
+	function handleUnFavoritePokemon() {
+		const name = data.name[0].toUpperCase() + data.name.slice(1);
+		toast.success(`${name} removido dos favoritos!`, {
+			icon: <Heart size={30} />,
+		});
+		unFavoritePokemon(data.id);
+	}
+
 	return (
-		<div className="mx-auto h-[740px] w-[400px] overflow-hidden bp-1:h-[840px]  bp-1:w-[524px] bp-1-[600px]:rounded-b-lg">
-			<div
-				className={`${
-					screenSmallerThan524 !== null ? "" : "invisible"
-				} relative mx-auto rounded-b-xl drop-shadow-card 
-			`}
-			>
+		<BottomSheet
+			open={open}
+			expandOnContentDrag
+			scrollLocking
+			onDismiss={handleCancel}
+			snapPoints={({ minHeight, maxHeight }) => {
+				return [minHeight + 90, maxHeight * 0.975];
+			}}
+		>
+			<div className="mx-auto h-[740px] w-[400px] overflow-hidden rounded-b-lg  bp-1:h-[840px] bp-1:w-[524px]">
 				<div
-					style={{
-						maskImage: mask,
-						WebkitMaskImage: mask,
-					}}
+					className={`${
+						screenSmallerThan524 !== null ? "" : "invisible"
+					} relative mx-auto rounded-b-xl drop-shadow-card 
+			`}
 				>
-					<header className={headerClassName}>
-						<div className="mb-2 mr-[12px] mt-auto flex h-[105px] flex-col items-start gap-1 bp-1:mb-4 bp-1:ml-auto min-[524px]:mr-[39px]">
-							<span className="text-md font-regular text-gray50">{hash}</span>
-							<span className="mb-2 text-3xl font-extraBold leading-none text-gray50 bp-1:text-5xl">
-								{name}
-							</span>
-							<div className="flex w-full gap-2">
-								{tags.map((type) => {
-									return <Tag type={type} key={type} />;
-								})}
+					<div
+						style={{
+							maskImage: mask,
+							WebkitMaskImage: mask,
+						}}
+					>
+						<header className={headerClassName}>
+							<div className="mb-2 mr-[12px] mt-auto flex h-[105px] flex-col items-start gap-1 bp-1:mb-4 bp-1:ml-auto min-[524px]:mr-[39px]">
+								<span className="text-md font-regular text-gray50">{hash}</span>
+								<span className="mb-2 text-3xl font-extraBold capitalize leading-none text-gray50 bp-1:text-5xl">
+									{data.name}
+								</span>
+								<div className="flex w-full gap-2">
+									{data.types.map(({ name }) => {
+										return <Tag type={name} key={name} />;
+									})}
+								</div>
+							</div>
+							<Img
+								className="absolute bottom-[-10px] left-[20px] h-[155px] w-[135px] blur-[6px] bp-1:h-[181px] bp-1:w-[181px]"
+								src={pokebool}
+								width={181}
+								height={181}
+								alt="pokeboll"
+							/>
+						</header>
+						<button
+							disabled={isFavoritesRoute}
+							onClick={(e) => {
+								e.stopPropagation();
+
+								if (isFavorite) {
+									handleUnFavoritePokemon();
+									return;
+								}
+								handleFavoritePokemon();
+							}}
+							className="absolute right-[17px] top-[50px] rounded-md p-0 leading-none disabled:cursor-not-allowed"
+						>
+							<Heart
+								size={screenSmallerThan524 ? 35 : 40}
+								className={isFavorite ? "fill-red" : ""}
+							/>
+						</button>
+					</div>
+
+					<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 bp-1:top-[240px]">
+						<div className="my-[20px] flex justify-between px-[40px] min-[600px]:mt-[50px]">
+							<Button
+								active={active === "about"}
+								onClick={() => {
+									handleChangeTabs("about");
+								}}
+							>
+								About
+							</Button>
+							<Button
+								active={active === "stats"}
+								onClick={() => {
+									handleChangeTabs("stats");
+								}}
+							>
+								Stats
+							</Button>
+							<Button
+								active={active === "evolution"}
+								onClick={() => {
+									handleChangeTabs("evolution");
+								}}
+							>
+								Evolution
+							</Button>
+							<Button
+								active={active === "moves"}
+								onClick={() => {
+									handleChangeTabs("moves");
+								}}
+							>
+								Moves
+							</Button>
+						</div>
+						<div className="overflow-hidden rounded-b-xl bg-gray100 p-8 bp-1:pb-[53px]">
+							<div
+								data-index={active}
+								id="tabs_scroll"
+								className="flex h-full gap-8 bp-1:gap-16"
+							>
+								<div className="flex min-w-[336px] flex-1 bp-1:min-w-[460px]">
+									<About
+										data={{
+											ability: data.abilities,
+											about: data.about,
+											gender: data.isFemale,
+											genera: data.genera,
+											height: data.height,
+											strengths: data.strengths,
+											weakens: data.weakens,
+											weight: data.weight,
+										}}
+									/>
+								</div>
+								<div className="flex min-w-[336px] bp-1:min-w-[460px]">
+									<Stats data={data.stats} total={data.statsTotal} />
+								</div>
+								<div className="flex min-w-[336px] bp-1:min-w-[460px]">
+									<Evolution evolutions={data.evolutions} />
+								</div>
+								<div className="flex min-w-[336px] bp-1:min-w-[460px]">
+									<Moves moves={data.moves} tag={data.types[0].name} />
+								</div>
 							</div>
 						</div>
-						<Img
-							className="absolute bottom-[-10px] left-[20px] h-[155px] blur-[6px] bp-1:h-[181px] bp-1:w-[181px]"
-							src={pokebool}
-							style={{
-								objectFit: "contain",
-								objectPosition: " 50% 50%",
-							}}
-							width={135}
-							height={155}
-							alt="pokeboll"
-						/>
-					</header>
-					<button className="absolute right-[17px] top-[50px] rounded-md p-0 leading-none">
-						<Heart size={screenSmallerThan524 ? 35 : 40} />
-					</button>
+					</main>
+					<Img
+						draggable={false}
+						id="pokemon"
+						className="absolute left-[20px] top-[25px] h-[202px] w-[204px] bp-1:h-[251px] bp-1:w-[236px]"
+						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`}
+						width={236}
+						height={251}
+						alt="Pokemon"
+					/>
 				</div>
-
-				<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 bp-1:top-[240px]">
-					<div className="my-[20px] flex justify-between px-[40px] min-[600px]:mt-[50px]">
-						<Button
-							active={active === "about"}
-							onClick={() => {
-								handleChangeTabs("about");
-							}}
-						>
-							About
-						</Button>
-						<Button
-							active={active === "stats"}
-							onClick={() => {
-								handleChangeTabs("stats");
-							}}
-						>
-							Stats
-						</Button>
-						<Button
-							active={active === "evolution"}
-							onClick={() => {
-								handleChangeTabs("evolution");
-							}}
-						>
-							Evolution
-						</Button>
-						<Button
-							active={active === "moves"}
-							onClick={() => {
-								handleChangeTabs("moves");
-							}}
-						>
-							Moves
-						</Button>
-					</div>
-					<div className="overflow-hidden rounded-b-xl bg-gray100 px-8 pb-[30px] pt-[40px] bp-1:px-16 bp-1:pb-[53px]">
-						<div
-							data-index={active}
-							id="tabs_scroll"
-							className="flex h-full gap-8 bp-1:gap-16"
-						>
-							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
-								<About />
-							</div>
-							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
-								<Stats />
-							</div>
-							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
-								<Evolution />
-							</div>
-							<div className="flex min-w-[336px] bp-1:min-w-[396px]">
-								<Moves />
-							</div>
-						</div>
-					</div>
-				</main>
-				<Img
-					draggable={false}
-					id="pokemon"
-					style={{
-						objectFit: "contain",
-						objectPosition: " 50% 50%",
-					}}
-					className="absolute left-[20px] top-[25px] bp-1:h-[251px] bp-1:w-[236px]"
-					src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
-					width={204}
-					height={216}
-					alt="Pokemon"
-				/>
 			</div>
-		</div>
+		</BottomSheet>
 	);
 }
 
-export function Modal({ handleCancel, open, pokemon }: IModalProps) {
-	return (
-		<>
-			<BottomSheet
-				open={open}
-				expandOnContentDrag
-				scrollLocking
-				footer={<div className="h-[68px] bp-2:hidden bp-2:h-0 " />}
-				onDismiss={handleCancel}
-				snapPoints={({ minHeight, maxHeight }) => {
-					return [minHeight, maxHeight * 0.8];
-				}}
-			>
-				<Component
-					id={pokemon.id}
-					name={pokemon.name}
-					tags={pokemon.tags}
-					hash={pokemon.hash}
-				/>
-			</BottomSheet>
-		</>
-	);
-}
+export const BottomSheetModal = memo(Component);

@@ -1,18 +1,24 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, ElementRef } from "react";
 
-import { Colors, Theme } from "@/app/styles/theme";
+import { Colors, Theme } from "styles/theme";
 
 interface ISliderProps {
 	attribute: string;
 	color?: Colors;
 	value: number;
+	capitalize: "capitalize" | "uppercase";
 }
 
-export function Slider({ attribute, value, color = "red" }: ISliderProps) {
+export function Slider({
+	attribute,
+	value,
+	color = "red",
+	capitalize,
+}: ISliderProps) {
 	const [width, setWidth] = useState<string | null>(null);
-	const sliderRefContainer = useRef<HTMLDivElement>(null);
+	const sliderRefContainer = useRef<ElementRef<"div">>(null);
 
 	useEffect(() => {
 		(() => {
@@ -39,10 +45,17 @@ export function Slider({ attribute, value, color = "red" }: ISliderProps) {
 
 	return (
 		<div className="flex h-[19px] items-center justify-start">
-			<span className="mr-[20px] min-w-[59px] text-right text-lg font-regular text-gray500">
+			<span
+				style={{
+					textTransform: capitalize,
+				}}
+				className="mr-[20px] inline-block min-w-[70px] text-right text-sm font-medium text-gray500 bp-1:text-lg"
+			>
 				{attribute}
 			</span>
-			<span className="mr-[12px] text-lg font-regular text-black">{value}</span>
+			<span className="mr-[12px] min-w-[30px] text-left text-sm font-regular text-black bp-1:text-lg">
+				{value}
+			</span>
 			<div
 				ref={sliderRefContainer}
 				className="opacity flex h-[12px] flex-1 rounded-full"

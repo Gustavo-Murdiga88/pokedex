@@ -25,6 +25,11 @@ module.exports = {
 				water: "linear-gradient(180deg, #20C5F5 0%, #157C9A 100%)",
 				grass: "linear-gradient(180deg, #70D090 0%, #55A23A 100%)",
 			},
+			keyframes: {},
+			animation: {
+				spinner: "spin 1s linear infinite forwards",
+			},
+			// animation: name duration timing-function delay iteration-count direction fill-mode;
 		},
 
 		backgroundImage: {

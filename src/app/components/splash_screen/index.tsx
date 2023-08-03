@@ -2,7 +2,7 @@ import Img from "next/image";
 
 export function SplashScreen() {
 	return (
-		<section className="flex h-screen w-screen items-center justify-center bg-black">
+		<section className="fixed  inset-0 z-40 flex h-screen w-screen items-center justify-center bg-black">
 			<Img
 				className="animate-bounce"
 				src="/assets/icon.svg"

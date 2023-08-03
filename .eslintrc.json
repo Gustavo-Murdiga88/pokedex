@@ -75,9 +75,11 @@
         "newlinesBetween": "always",
         "groups": [
           "/^(react)$/",
-          "/^(next)/",
-          "/(components)/",
-          "/^./"
+          "/^(next|zustand|react|lucide-react)/",
+          "/^(hooks|store|usecases|util)/",
+          "/^(components)/",
+          "/^(assets|styles)/",
+          "/^(./)/"
         ],
         "alphabetize": {
           "order": "asc",

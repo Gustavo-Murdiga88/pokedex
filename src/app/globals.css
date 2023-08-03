@@ -85,19 +85,19 @@ a {
 #tabs_scroll[data-index="stats"] {
   transition: transform 500ms ease-in-out;
 
-  transform: translate3d(-460px, 0px, 0px);
+  transform: translate3d(-522px, 0px, 0px);
 }
 
 #tabs_scroll[data-index="evolution"] {
   transition: transform 500ms ease-in-out;
 
-  transform: translate3d(-920px, 0px, 0px);
+  transform: translate3d(-1048px, 0px, 0px);
 }
 
 #tabs_scroll[data-index="moves"] {
   transition: transform 500ms ease-in-out;
 
-  transform: translate3d(-1380px, 0px, 0px);
+  transform: translate3d(-1572px, 0px, 0px);
 }
 
 #tabs_scroll[data-index="about"] {

@@ -2,17 +2,18 @@
 
 import { useState } from "react";
 
+import { MoveRight } from "lucide-react";
 import Img from "next/image";
 
-import { Tag } from "../../../../../components/tag";
-
-import { MoveRight } from "lucide-react";
+import { TagsTypeProps } from "components/card/types";
+import { Tag } from "components/tag";
 
 interface IPokeAvatarProps {
 	hasEvolution: boolean;
 	numberOfEvolution: string;
 	img: string;
-	type: string;
+	type: TagsTypeProps;
+	name: string;
 }
 
 export function PokeAvatar({
@@ -20,13 +21,9 @@ export function PokeAvatar({
 	img,
 	numberOfEvolution,
 	type,
+	name,
 }: IPokeAvatarProps) {
 	const [loading, setLoading] = useState(true);
-
-	// function removeSkeleton() {
-	// 	if (containerRef.current) {
-	// 	}
-	// }
 
 	return (
 		<div
@@ -41,35 +38,40 @@ export function PokeAvatar({
 			>
 				<Img
 					id="pokemon"
-					src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
-					width={140}
+					src={img}
+					style={{
+						width: 117,
+						height: 117,
+					}}
+					width={117}
+					height={117}
 					onLoadingComplete={() => {
 						setLoading(false);
 					}}
-					height={140}
-					objectFit="cover"
 					alt="Pokemon"
 				/>
 			</span>
 			<div className={`flex gap-2 ${loading ? "invisible" : ""}`}>
-				<span className="text-lg font-medium text-gray500">Squirtle</span>
-				<span className="inline-block pt-[5px] text-sm font-regular text-gray500">
+				<span className=" text-sm font-medium capitalize text-gray500 bp-1:text-lg">
+					{name}
+				</span>
+				<span className="inline-block text-sm font-regular text-gray500 bp-1:pt-[5px]">
 					{numberOfEvolution}
 				</span>
 				<span
 					className={`flex items-center text-gray500 ${
-						hasEvolution ? "inline-block" : "invisible"
+						hasEvolution ? "invisible" : "inline-block"
 					}`}
 				>
 					<MoveRight size={19} />
 				</span>
 			</div>
 			<div
-				className={`w-[76px]
+				className={`min-[76px]
       ${loading ? "invisible" : ""}
       `}
 			>
-				<Tag type="water" />
+				<Tag type={type} />
 			</div>
 		</div>
 	);

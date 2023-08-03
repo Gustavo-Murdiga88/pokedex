@@ -1,9 +1,10 @@
-import { NavigationContainer } from "../container";
 import { Bell, Settings } from "lucide-react";
+
+import { NavigationContainer } from "../container";
 
 export function HeaderDesktop() {
 	return (
-		<header className="sticky inset-x-0 top-0 z-10 mx-auto w-full border-b border-b-gray200 bg-gray50  px-4 bp-2:static bp-2:border-b-0 bp-2:px-8">
+		<header className="mx-auto w-full border-b border-b-gray200 bg-gray50  px-4 bp-2:static bp-2:border-b-0 bp-2:px-8">
 			<div className="flex items-center justify-between py-2 max-[600px]:mt-2 bp-2:mt-8  bp-2:py-[22px]">
 				<NavigationContainer />
 				<div className="flex items-center justify-start gap-[46px]  max-[600px]:w-full max-[600px]:justify-between">

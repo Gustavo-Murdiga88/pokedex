@@ -41,6 +41,7 @@ export const Theme = {
 		pink: "#FF48CC",
 
 		yellow: "#FCF47C",
+		yellow100: "#E6B52F",
 
 		blue100: "#20C5F5",
 		blue200: "#265DFC",

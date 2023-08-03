@@ -1,16 +1,14 @@
-import "./globals.css";
 import React from "react";
-
-import "react-toastify/dist/ReactToastify.css";
 
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
-
-import "./styles/react_bottom_shet.css";
+import { ToastContainer } from "react-toastify";
 
 import { Header } from "./components/header";
 
-import { ToastContainer } from "react-toastify";
+import "./globals.css";
+import "./styles/react_bottom_shet.css";
+import "react-toastify/dist/ReactToastify.css";
 
 const roboto = Roboto({
 	weight: ["400", "500", "700", "900"],

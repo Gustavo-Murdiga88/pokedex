@@ -1,10 +1,10 @@
 "use client";
 
+import { Home, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { PokeBoll } from "@/util/icons";
-import { Home, User } from "lucide-react";
+import { PokeBoll } from "util/icons";
 
 export function NavigationContainer() {
 	const path = usePathname();
@@ -20,7 +20,7 @@ export function NavigationContainer() {
 	}
 
 	return (
-		<div className="flex items-center justify-start gap-[32px] max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:z-10 max-[600px]:h-[px] max-[600px]:justify-between max-[600px]:border-t max-[600px]:border-t-gray300 max-[600px]:bg-gray50 max-[600px]:px-[45px] max-[600px]:py-[20px]">
+		<div className="flex items-center justify-start gap-[32px] max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:z-10 max-[600px]:h-[px] max-[600px]:justify-between max-[600px]:border-t max-[600px]:border-t-gray300 max-[600px]:bg-gray50 max-[600px]:px-[45px] max-[600px]:py-[15px]">
 			<Link
 				onClick={handleChangePage}
 				data-arepage={path === "/"}
