@@ -10,6 +10,7 @@ export function NavigationContainer() {
 	const path = usePathname();
 
 	function handleChangePage() {
+		console.log("oi");
 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 		//@ts-ignore
 		if (document.startViewTransition) {
