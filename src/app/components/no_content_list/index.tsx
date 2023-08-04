@@ -14,13 +14,13 @@ export function NoContent() {
 				/>
 			</div>
 			<div className="flex max-w-[555px] flex-col">
-				<p className="text-3xl font-bold leading-[150%] bp-2:text-4xl">
+				<p className="text-3xl font-bold leading-[150%] dark:text-gray50 bp-2:text-4xl">
 					Oh! Que pena, você ainda não possui pokémons favoritos. Retorne para a
 					listagem e selecione os seus favoritos!
 				</p>
 				<Link
 					href="/"
-					className="bg-yellow100 ml-auto mt-10 flex w-[160px] items-center justify-center rounded-lg border border-black p-[9px] text-lg font-bold "
+					className="ml-auto mt-10 flex w-[160px] items-center justify-center rounded-lg border border-black bg-yellow100 p-[9px] text-lg font-bold "
 				>
 					Voltar
 				</Link>

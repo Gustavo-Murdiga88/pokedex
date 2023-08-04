@@ -49,11 +49,11 @@ export function Slider({
 				style={{
 					textTransform: capitalize,
 				}}
-				className="mr-[20px] inline-block min-w-[70px] text-right text-sm font-medium text-gray500 bp-1:text-lg"
+				className="mr-[20px] inline-block min-w-[70px] text-right text-sm font-medium text-gray500 dark:text-gray50 bp-1:text-lg"
 			>
 				{attribute}
 			</span>
-			<span className="mr-[12px] min-w-[30px] text-left text-sm font-regular text-black bp-1:text-lg">
+			<span className="mr-[12px] min-w-[30px] text-left text-sm font-regular text-black dark:text-gray50 bp-1:text-lg">
 				{value}
 			</span>
 			<div

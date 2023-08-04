@@ -1,6 +1,6 @@
 import Img from "next/image";
 
-import brand from "../../assets/icons/brand.svg";
+import brand from "assets/icons/brand.png";
 
 export function Header() {
 	return (
@@ -13,7 +13,8 @@ export function Header() {
 					height: 60,
 					width: 149,
 				}}
-				className="max-[600px]:absolute max-[600px]:inset-x-[50%] max-[600px]:top-[64px] max-[600px]:-translate-x-1/2"
+				quality={100}
+				className="max-[600px]:absolute max-[600px]:inset-x-[50%] max-[600px]:top-[80px] max-[600px]:-translate-x-1/2"
 				src={brand}
 				alt="bug"
 				height={60}

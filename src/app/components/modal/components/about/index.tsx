@@ -24,16 +24,17 @@ interface IAboutProps {
 export function About({ data }: IAboutProps) {
 	return (
 		<div className="flex h-full w-full flex-col gap-4">
-			<span className="inline-block break-words text-sm font-regular leading-[24px] text-gray500 bp-1:text-lg">
+			<span className="inline-block break-words text-sm font-regular leading-[24px] text-gray500 dark:text-gray50 bp-1:text-lg">
 				{data.about[8].flavor_text}
 			</span>
 			<section className="grid grid-cols-3 gap-y-6">
 				<div>
-					<span className="text-sm font-medium text-gray500 bp-1:text-md ">
+					<span className="text-sm font-medium text-gray500 dark:text-gray50 bp-1:text-md ">
 						Height
 					</span>
 					<div className="mt-[14px] flex items-end gap-1">
 						<Img
+							className="dark:invert"
 							src={heightsvg}
 							alt="height"
 							style={{
@@ -43,19 +44,20 @@ export function About({ data }: IAboutProps) {
 							height={18}
 							width={18}
 						/>
-						<span className="text-sm leading-none bp-1:text-md">{`${(
+						<span className="ml-1 text-sm leading-none dark:text-gray50 bp-1:text-md">{`${(
 							data.height / 10
 						).toFixed(1)}m`}</span>
 					</div>
 				</div>
 				<div>
-					<span className="text-sm font-medium text-gray500 bp-1:text-md ">
+					<span className="text-sm font-medium text-gray500 dark:text-gray50 bp-1:text-md ">
 						Weight
 					</span>
 					<div className="mt-[14px] flex items-end gap-1">
 						<Img
+							className="dark:invert"
 							src={weightsvg}
-							alt="height"
+							alt="weight"
 							style={{
 								height: 18,
 								width: 18,
@@ -63,19 +65,20 @@ export function About({ data }: IAboutProps) {
 							height={18}
 							width={18}
 						/>
-						<span className="text-sm leading-none bp-1:text-md">
+						<span className="ml-1 text-sm leading-none dark:text-gray50 bp-1:text-md">
 							{data.weight}Kg
 						</span>
 					</div>
 				</div>
 				<div>
-					<span className="text-sm font-medium text-gray500 bp-1:text-md ">
+					<span className="text-sm font-medium text-gray500 dark:text-gray50 bp-1:text-md ">
 						Gender
 					</span>
 					<div className="mt-[14px] flex items-end gap-1">
 						<Img
+							className="dark:invert"
 							src={genere}
-							alt="height"
+							alt="gender"
 							style={{
 								height: 18,
 								width: 18,
@@ -83,35 +86,43 @@ export function About({ data }: IAboutProps) {
 							height={18}
 							width={18}
 						/>
-						<span className="text-sm leading-none bp-1:text-md">
+						<span className="ml-1 text-sm leading-none dark:text-gray50 bp-1:text-md">
 							{data.gender ? "Female" : "Male"}
 						</span>
 					</div>
 				</div>
 				<div>
-					<span className="text-sm bp-1:text-lg">Category</span>
+					<span className="text-sm dark:text-gray50 bp-1:text-lg">
+						Category
+					</span>
 					<div>
-						<span className="text-sm bp-1:text-lg">{data.genera[0].genus}</span>
+						<span className="text-sm dark:text-gray50 bp-1:text-lg">
+							{data.genera[0].genus}
+						</span>
 					</div>
 				</div>
 				<div>
-					<span className="text-sm bp-1:text-lg">Abilities</span>
+					<span className="text-sm dark:text-gray50 bp-1:text-lg">
+						Abilities
+					</span>
 					<div>
-						<span className="text-sm bp-1:text-lg">{data.ability[0].name}</span>
+						<span className="text-sm dark:text-gray50 bp-1:text-lg">
+							{data.ability[0].name}
+						</span>
 					</div>
 				</div>
 			</section>
 
 			<footer className="flex flex-col gap-3 bp-1:gap-8 ">
 				<div>
-					<span className="text-sm bp-1:text-lg">Weakens</span>
+					<span className="text-sm dark:text-gray50 bp-1:text-lg">Weakens</span>
 					<div className="mt-3 flex w-full flex-wrap gap-2">
 						{data.weakens.map(({ name }) => {
 							return <Tag type={name} key={name} />;
 						})}
 					</div>
 				</div>
-				<div className="text-sm bp-1:text-lg">
+				<div className="text-sm dark:text-gray50 bp-1:text-lg">
 					<span>Strengths</span>
 					<div className="mt-3 flex flex-wrap gap-2">
 						{data.strengths.map(({ name }) => {

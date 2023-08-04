@@ -75,7 +75,7 @@
         "newlinesBetween": "always",
         "groups": [
           "/^(react)$/",
-          "/^(next|zustand|react|lucide-react)/",
+          "/^(next|zustand|react|lucide-react|@radix-ui)/",
           "/^(hooks|store|usecases|util)/",
           "/^(components)/",
           "/^(assets|styles)/",

@@ -29,7 +29,7 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR">
 			<body
-				className={`${roboto.className} ${roboto.variable} mx-auto w-full max-w-max`}
+				className={`${roboto.className} ${roboto.variable} mx-auto w-full max-w-max dark:dark:bg-surface`}
 			>
 				<ToastContainer
 					autoClose={5000}

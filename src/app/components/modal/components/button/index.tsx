@@ -13,7 +13,7 @@ export function Button({ children, active, ...props }: IButtonProps) {
 		>
 			<span
 				data-active={active}
-				className={`border-b-2 text-lg font-bold data-[active=false]:border-b-gray50 data-[active=true]:border-b-red data-[active=true]:text-red${props.className}`}
+				className={`border-b-2 text-lg font-bold data-[active=false]:border-b-gray50 data-[active=true]:text-red dark:text-gray300 dark:data-[active=false]:border-b-zinc800 dark:data-[active=true]:border-b-gray50 dark:data-[active=true]:text-gray50 ${props.className}`}
 			>
 				{children}
 			</span>

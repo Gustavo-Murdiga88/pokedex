@@ -101,7 +101,10 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 			scrollLocking
 			onDismiss={handleCancel}
 			snapPoints={({ minHeight, maxHeight }) => {
-				return [minHeight + 90, maxHeight * 0.975];
+				if (screenSmallerThan524) {
+					return [minHeight + 90, maxHeight * 0.975];
+				}
+				return [minHeight + 30, maxHeight * 0.95];
 			}}
 		>
 			<div className="mx-auto h-[740px] w-[400px] overflow-hidden rounded-b-lg  bp-1:h-[840px] bp-1:w-[524px]">
@@ -157,7 +160,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 						</button>
 					</div>
 
-					<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 bp-1:top-[240px]">
+					<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 dark:bg-zinc800 bp-1:top-[240px]">
 						<div className="my-[20px] flex justify-between px-[40px] min-[600px]:mt-[50px]">
 							<Button
 								active={active === "about"}
@@ -192,7 +195,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								Moves
 							</Button>
 						</div>
-						<div className="overflow-hidden rounded-b-xl bg-gray100 p-8 bp-1:pb-[53px]">
+						<div className="overflow-hidden rounded-b-xl bg-gray100 p-8  dark:bg-zinc900 bp-1:pb-[53px]">
 							<div
 								data-index={active}
 								id="tabs_scroll"

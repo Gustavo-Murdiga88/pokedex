@@ -12,6 +12,7 @@ import { IPokemonFormattedProps } from "usecases/fetch_pokemon";
 import { Theme } from "styles/theme";
 
 import { MappingTag } from "./types";
+import { useNotificationsPokemonsStore } from "@/app/store/notifications";
 
 import pokebool from "../../assets/icons/pokeballEclipse.png";
 import { BottomSheetModal } from "../modal";
@@ -32,6 +33,13 @@ function Component({ data }: ICardProps) {
 				};
 			},
 		);
+	const { addNotifications } = useNotificationsPokemonsStore(
+		({ addNotifications }) => {
+			return {
+				addNotifications,
+			};
+		},
+	);
 
 	const hash = String(data.id).padStart(3, "0").padStart(4, "#");
 	const isFavorite = pokemons.some(({ id }) => id === data.id);
@@ -70,6 +78,10 @@ function Component({ data }: ICardProps) {
 			icon: <Heart className="fill-red" size={30} />,
 		});
 		favoritePokemon(data);
+		addNotifications({
+			data,
+			remove: false,
+		});
 	}
 
 	function handleUnfavoritePokemon() {
@@ -78,6 +90,10 @@ function Component({ data }: ICardProps) {
 			icon: <Heart size={30} />,
 		});
 		unFavoritePokemon(data.id);
+		addNotifications({
+			data,
+			remove: true,
+		});
 	}
 
 	return (

@@ -19,9 +19,9 @@ function Component({ moves, tag }: IMovesProps) {
 				return (
 					<li
 						key={move}
-						className="flex items-center justify-between border-b border-b-gray200 py-2 pt-3 capitalize"
+						className="flex items-center justify-between border-b border-b-gray200 py-2 pl-1 pt-3 capitalize"
 					>
-						<span className="text-sm font-medium text-gray500 bp-1:text-lg">
+						<span className="text-sm font-medium text-gray500 dark:text-gray50 bp-1:text-lg">
 							{name}
 						</span>
 						<Img

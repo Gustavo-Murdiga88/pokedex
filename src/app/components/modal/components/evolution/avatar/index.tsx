@@ -34,7 +34,7 @@ export function PokeAvatar({
 			<span
 				className={`inline-block max-w-[140px] ${
 					loading ? "invisible" : ""
-				} overflow-hidden rounded-full border border-blue300 bg-gray50`}
+				} overflow-hidden rounded-full border border-blue300 bg-gray50 dark:border-blue100 dark:bg-zinc900`}
 			>
 				<Img
 					id="pokemon"
@@ -52,14 +52,14 @@ export function PokeAvatar({
 				/>
 			</span>
 			<div className={`flex gap-2 ${loading ? "invisible" : ""}`}>
-				<span className=" text-sm font-medium capitalize text-gray500 bp-1:text-lg">
+				<span className=" text-sm font-medium capitalize text-gray500 dark:text-gray50 bp-1:text-lg">
 					{name}
 				</span>
-				<span className="inline-block text-sm font-regular text-gray500 bp-1:pt-[5px]">
+				<span className="inline-block text-sm font-regular text-gray500 dark:text-gray50 bp-1:pt-[5px]">
 					{numberOfEvolution}
 				</span>
 				<span
-					className={`flex items-center text-gray500 ${
+					className={`flex items-center text-gray500 dark:text-gray50 ${
 						hasEvolution ? "invisible" : "inline-block"
 					}`}
 				>
