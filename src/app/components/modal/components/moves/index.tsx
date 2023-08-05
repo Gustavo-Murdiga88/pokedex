@@ -13,7 +13,7 @@ interface IMovesProps {
 
 function Component({ moves, tag }: IMovesProps) {
 	return (
-		<ul className="bp-2:[425px] h-[324px] w-full overflow-y-auto bp-1:max-h-full bp-2:max-h-[425px]">
+		<ul className="h-[324px] w-full overflow-y-auto bp-1:max-h-full bp-2:h-[425px] bp-2:max-h-[425px]">
 			{moves.map(({ name }) => {
 				const move = name.replace("-", " ");
 				return (
