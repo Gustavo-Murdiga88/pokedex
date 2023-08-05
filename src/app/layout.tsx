@@ -28,7 +28,7 @@ export default function RootLayout({
 	return (
 		<html lang="pt-BR">
 			<body
-				className={`${roboto.className} ${roboto.variable} mx-auto w-full max-w-max dark:dark:bg-surface`}
+				className={`${roboto.className} ${roboto.variable} mx-auto h-[100dvh] w-full max-w-max dark:dark:bg-surface`}
 			>
 				<ToastContainer
 					autoClose={5000}
@@ -45,7 +45,7 @@ export default function RootLayout({
 					closeButton={false}
 				/>
 				<main className="mx-auto max-w-card-content">
-					<Header />
+					{/* <Header /> */}
 					{children}
 				</main>
 			</body>

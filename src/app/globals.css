@@ -8,6 +8,8 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 *::-webkit-scrollbar {
@@ -17,6 +19,7 @@
 body {
   font-family: var(--roboto);
 }
+ 
 
 input,
 button,
