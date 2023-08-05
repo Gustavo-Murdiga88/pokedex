@@ -131,7 +131,6 @@ a {
 .react-modal-sheet-container {
   background-color: transparent !important;
   box-shadow: 0 0 0 0 !important;
-  position: absolute !important;
 }
 
 .react-modal-sheet-backdrop{
@@ -149,7 +148,7 @@ a {
 
 .react-modal-sheet-content {
   /* custom styles */
-  position: absolute !important;  
+  /* position: absolute !important;  
   inset: 0 !important;
-  touch-action: pan-y !important;
+  touch-action: pan-y !important; */
 }

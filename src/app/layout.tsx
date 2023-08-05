@@ -32,9 +32,10 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="pt-BR">
+		<html lang="pt-BR" className="">
 			<body
-				className={`${roboto.className} ${roboto.variable} mx-auto h-[100dvh] w-full max-w-max dark:dark:bg-surface`}
+				id="root"
+				className={`${roboto.className} ${roboto.variable} mx-auto h-screen w-full max-w-max overflow-auto dark:dark:bg-surface`}
 			>
 				<ToastContainer
 					autoClose={5000}

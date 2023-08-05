@@ -99,7 +99,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 			isOpen={open}
 			onClose={handleCancel}
 			snapPoints={[0.89]}
-			className="relative"
+			rootId="root"
 		>
 			<Sheet.Container className="bp-2:mb-[30px]">
 				<Sheet.Content disableDrag>
@@ -256,7 +256,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 					</div>
 				</Sheet.Content>
 			</Sheet.Container>
-			{/* <Sheet.Backdrop /> */}
+			<Sheet.Backdrop />
 		</Sheet>
 	);
 }
