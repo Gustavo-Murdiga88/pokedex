@@ -95,9 +95,14 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 	}
 
 	return (
-		<Sheet isOpen={open} onClose={handleCancel} snapPoints={[0.89]}>
-			<Sheet.Container className=" bp-2:mb-[30px]" drag={false}>
-				<Sheet.Content className="z-50" disableDrag>
+		<Sheet
+			isOpen={open}
+			onClose={handleCancel}
+			snapPoints={[0.89]}
+			className="relative"
+		>
+			<Sheet.Container className="bp-2:mb-[30px]">
+				<Sheet.Content disableDrag>
 					<div className="mx-auto h-[655px] w-[400px] overflow-hidden rounded-b-lg drop-shadow-card bp-1:h-[840px] bp-1:w-[524px]">
 						<div
 							className={`${

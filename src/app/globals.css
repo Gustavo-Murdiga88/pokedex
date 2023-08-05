@@ -131,9 +131,25 @@ a {
 .react-modal-sheet-container {
   background-color: transparent !important;
   box-shadow: 0 0 0 0 !important;
+  position: absolute !important;
 }
 
 .react-modal-sheet-backdrop{
   backdrop-filter: blur(2px);
   background-color: rgba(0, 0, 0, 0.70) !important;
+}
+
+/* 
+.react-modal-sheet-header {
+  /* custom styles */
+/* } */
+/* .react-modal-sheet-drag-indicator { */
+  /* custom styles */
+/* } */ 
+
+.react-modal-sheet-content {
+  /* custom styles */
+  position: absolute !important;  
+  inset: 0 !important;
+  touch-action: pan-y !important;
 }
