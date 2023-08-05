@@ -23,7 +23,7 @@ interface IAboutProps {
 
 export function About({ data }: IAboutProps) {
 	return (
-		<div className="flex h-full w-full flex-col gap-4">
+		<div className="flex w-full flex-col gap-4">
 			<span className="inline-block break-words text-sm font-regular leading-[24px] text-gray500 dark:text-gray50 bp-1:text-lg">
 				{data.about[8].flavor_text}
 			</span>

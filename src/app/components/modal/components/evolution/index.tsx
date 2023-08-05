@@ -8,7 +8,7 @@ interface IEvolutionProps {
 
 export function Evolution({ evolutions }: IEvolutionProps) {
 	return (
-		<div className="flex h-[420px] w-full flex-wrap items-start justify-center gap-3 overflow-y-auto bp-1:h-full">
+		<div className="flex w-full flex-wrap items-start justify-center gap-3 overflow-y-auto bp-1:h-full">
 			{evolutions.map(({ id, lastEvolution, name, type }) => {
 				const hash = String(id).padStart(3, "0").padStart(4, "#");
 				return (

@@ -96,7 +96,7 @@ module.exports = {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-				fire: "linear-gradient(180deg, #EBB753 0%, rgba(198, 0, 0, 0.71) 100%)",
+				fire: "linear-gradient(180deg, #EBB753 0%, rgba(198, 0, 0) 100%)",
 				eletric: "linear-gradient(180deg, #FCF47C 0%, #BC8905 100%)",
 				water: "linear-gradient(180deg, #20C5F5 0%, #157C9A 100%)",
 				grass: "linear-gradient(180deg, #70D090 0%, #55A23A 100%)",

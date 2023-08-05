@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.8);
-  --rsbs-bg: "transparent";
-  --rsbs-handle-bg: "transparent";
-  --rsbs-max-w: auto;
-  --rsbs-ml: env(safe-area-inset-left);
-  --rsbs-mr: env(safe-area-inset-right);
-  --rsbs-overlay-rounded: 16px;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -43,7 +33,8 @@ a {
   transform: rotateY(180deg);
 }
 
-@keyframes fade-in {
+/* implements when this api are available stable */
+/* @keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -81,7 +72,7 @@ a {
 
 #header {
   view-transition-name: main-header;
-}
+} */
 
 #tabs_scroll[data-index="stats"] {
   transition: transform 500ms ease-in-out;
@@ -134,3 +125,12 @@ a {
   
 }
 
+.react-modal-sheet-container {
+  background-color: transparent !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.react-modal-sheet-backdrop{
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.70) !important;
+}

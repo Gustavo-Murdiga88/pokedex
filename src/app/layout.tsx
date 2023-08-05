@@ -7,7 +7,6 @@ import { ToastContainer } from "react-toastify";
 import { Header } from "./components/header";
 
 import "./globals.css";
-import "./styles/react_bottom_shet.css";
 import "react-toastify/dist/ReactToastify.css";
 
 const roboto = Roboto({
@@ -36,6 +35,12 @@ export default function RootLayout({
 					toastClassName="border border-yellow bg-gray50 font-regular text-black h-[1.875rem] text-md rounded-[16px]"
 					hideProgressBar
 					position="top-right"
+					style={{
+						zIndex: 99999999,
+					}}
+					toastStyle={{
+						marginBottom: 12,
+					}}
 					closeOnClick
 					closeButton={false}
 				/>

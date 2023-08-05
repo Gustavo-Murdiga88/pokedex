@@ -64,12 +64,10 @@ function Component({ data }: ICardProps) {
 			render: true,
 		});
 
-		setTimeout(() => {
-			setOpen({
-				open: false,
-				render: false,
-			});
-		}, 2000);
+		setOpen({
+			open: false,
+			render: false,
+		});
 	}
 
 	function handleFavoritePokemon() {
@@ -164,17 +162,15 @@ function Component({ data }: ICardProps) {
 				</div>
 			</button>
 
-			{modalOpen.render && (
-				<BottomSheetModal
-					open={modalOpen.open}
-					handleCancel={handleCloseModal}
-					pokemon={{
-						data,
-						hash,
-						isFavorite,
-					}}
-				/>
-			)}
+			<BottomSheetModal
+				open={modalOpen.open}
+				handleCancel={handleCloseModal}
+				pokemon={{
+					data,
+					hash,
+					isFavorite,
+				}}
+			/>
 		</>
 	);
 }

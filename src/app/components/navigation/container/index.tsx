@@ -20,7 +20,7 @@ export function NavigationContainer() {
 	}
 
 	return (
-		<div className="flex items-center justify-start gap-[32px] max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:z-10 max-[600px]:h-[px] max-[600px]:justify-between max-[600px]:border-t max-[600px]:border-t-gray300 max-[600px]:bg-gray50 max-[600px]:px-[45px] max-[600px]:py-[15px] dark:max-[600px]:bg-zinc800">
+		<div className="flex items-center justify-start gap-[32px] max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:z-[99999999] max-[600px]:h-[px] max-[600px]:justify-between max-[600px]:border-t max-[600px]:border-t-gray300 max-[600px]:bg-gray50 max-[600px]:px-[45px] max-[600px]:py-[15px] dark:max-[600px]:bg-zinc800">
 			<Link
 				onClick={handleChangePage}
 				data-arepage={path === "/"}
