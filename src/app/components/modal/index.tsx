@@ -256,7 +256,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 					</div>
 				</Sheet.Content>
 			</Sheet.Container>
-			<Sheet.Backdrop />
+			{/* <Sheet.Backdrop /> */}
 		</Sheet>
 	);
 }

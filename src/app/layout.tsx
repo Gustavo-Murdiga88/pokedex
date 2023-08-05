@@ -18,6 +18,12 @@ const roboto = Roboto({
 export const metadata: Metadata = {
 	title: "Pokédex",
 	description: "An application for test in my enterprise",
+	themeColor: [
+		{
+			color: "#18181b",
+			media: "(prefers-color-scheme: dark)",
+		},
+	],
 };
 
 export default function RootLayout({
