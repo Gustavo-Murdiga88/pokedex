@@ -9,20 +9,20 @@ import { PokeBoll } from "util/icons";
 export function NavigationContainer() {
 	const path = usePathname();
 
-	function handleChangePage() {
-		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-		//@ts-ignore
-		if (document.startViewTransition) {
-			// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-			//@ts-ignore
-			document.startViewTransition();
-		}
-	}
+	// function handleChangePage() {
+	// 	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// 	//@ts-ignore
+	// 	if (document.startViewTransition) {
+	// 		// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// 		//@ts-ignore
+	// 		document.startViewTransition();
+	// 	}
+	// }
 
 	return (
 		<div className="flex items-center justify-start gap-[32px] max-[600px]:fixed max-[600px]:inset-x-0 max-[600px]:bottom-0 max-[600px]:z-[99999999] max-[600px]:h-[px] max-[600px]:justify-between max-[600px]:border-t max-[600px]:border-t-gray300 max-[600px]:bg-gray50 max-[600px]:px-[45px] max-[600px]:py-[15px] dark:max-[600px]:bg-zinc800">
 			<Link
-				onClick={handleChangePage}
+				// onClick={handleChangePage}
 				data-arepage={path === "/"}
 				href="/"
 				prefetch
@@ -35,7 +35,7 @@ export function NavigationContainer() {
 				Home
 			</Link>
 			<Link
-				onClick={handleChangePage}
+				// onClick={handleChangePage}
 				data-arepage={path === "/favorites"}
 				href="/favorites"
 				prefetch
@@ -45,7 +45,7 @@ export function NavigationContainer() {
 				Favoritos
 			</Link>
 			<Link
-				onClick={handleChangePage}
+				// onClick={handleChangePage}
 				data-arepage={path === "/profile"}
 				href="/profile"
 				prefetch
