@@ -91,7 +91,6 @@ export function List({ data }: IPokemonsList) {
 				next={fetchMorePokemons}
 				dataLength={pokemonsList.length}
 				loader={<Spinner />}
-				height={566}
 				hasMore={!!nextUrl}
 				scrollThreshold={1}
 			>
