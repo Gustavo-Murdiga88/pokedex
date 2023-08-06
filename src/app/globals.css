@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 * {
   margin: 0;
   padding: 0;
@@ -22,6 +21,8 @@ body {
 }
  
 
+ 
+
 input,
 button,
 textarea,
@@ -37,6 +38,8 @@ a {
   transform: rotateY(180deg);
 }
 
+/* implements when this api are available stable */
+/* @keyframes fade-in {
 /* implements when this api are available stable */
 /* @keyframes fade-in {
   from {
@@ -129,3 +132,27 @@ a {
   
 }
 
+.react-modal-sheet-container {
+  background-color: transparent !important;
+  box-shadow: 0 0 0 0 !important;
+}
+
+.react-modal-sheet-backdrop{
+  backdrop-filter: blur(2px);
+  background-color: rgba(0, 0, 0, 0.70) !important;
+}
+
+/* 
+.react-modal-sheet-header {
+  /* custom styles */
+/* } */
+/* .react-modal-sheet-drag-indicator { */
+  /* custom styles */
+/* } */ 
+
+.react-modal-sheet-content {
+  /* custom styles */
+  /* position: absolute !important;  
+  inset: 0 !important;
+  touch-action: pan-y !important; */
+}

@@ -99,7 +99,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 		<BottomSheet
 			sibling={screenSmallerThan524 ? <NavigationContainer /> : null}
 			open={open}
-			maxHeight={screenSmallerThan524 ? 810 : 920}
+			maxHeight={screenSmallerThan524 ? 790 : 880}
 			header={
 				<button
 					disabled={isFavoritesRoute}
@@ -128,10 +128,10 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 				if (screenSmallerThan524) {
 					return [minHeight, maxHeight * 0.975];
 				}
-				return [minHeight + 30, maxHeight * 0.92];
+				return [minHeight, maxHeight * 0.88];
 			}}
 		>
-			<div className="mx-auto h-[700px] w-[400px] overflow-hidden rounded-b-lg bp-1:h-[802px] bp-1:w-[524px]">
+			<div className="mx-auto h-[700px] w-[400px] overflow-hidden bp-1:h-[823px]  bp-1:w-[524px] bp-2:rounded-b-lg">
 				<div
 					className={`${
 						screenSmallerThan524 !== null ? "" : "invisible"
@@ -164,9 +164,27 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								alt="pokeboll"
 							/>
 						</header>
+						<button
+							disabled={isFavoritesRoute}
+							onClick={(e) => {
+								e.stopPropagation();
+
+								if (isFavorite) {
+									handleUnFavoritePokemon();
+									return;
+								}
+								handleFavoritePokemon();
+							}}
+							className="absolute right-[17px] top-[50px] rounded-md p-0 leading-none disabled:cursor-not-allowed"
+						>
+							<Heart
+								size={screenSmallerThan524 ? 35 : 40}
+								className={isFavorite ? "fill-red" : ""}
+							/>
+						</button>
 					</div>
 
-					<main className="absolute inset-x-0 top-[200px] flex flex-col bg-gray50 dark:bg-zinc800 bp-1:top-[240px]">
+					<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 dark:bg-zinc800 bp-1:top-[240px]">
 						<div className="my-[20px] flex justify-between px-[40px] min-[600px]:mt-[50px]">
 							<Button
 								active={active === "about"}
@@ -201,11 +219,11 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								Moves
 							</Button>
 						</div>
-						<div className="h-[432px] overflow-hidden bg-gray100 p-8 dark:bg-zinc900 bp-2:h-[464px]">
+						<div className="overflow-hidden bg-gray100 p-8  dark:bg-zinc900 bp-1:pb-[53px]">
 							<div
 								data-index={active}
 								id="tabs_scroll"
-								className="flex gap-8 bp-1:gap-16"
+								className="flex h-full gap-8 bp-1:gap-16"
 							>
 								<div className="flex min-w-[336px] flex-1 bp-1:min-w-[460px]">
 									<About
