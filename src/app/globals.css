@@ -2,15 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --rsbs-backdrop-bg: rgba(0, 0, 0, 0.8);
-  --rsbs-bg: "transparent";
-  --rsbs-handle-bg: "transparent";
-  --rsbs-max-w: auto;
-  --rsbs-ml: env(safe-area-inset-left);
-  --rsbs-mr: env(safe-area-inset-right);
-  --rsbs-overlay-rounded: 16px;
-}
 
 * {
   margin: 0;
@@ -18,6 +9,8 @@
   box-sizing: border-box;
   scrollbar-width: thin;
   scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 *::-webkit-scrollbar {
@@ -27,6 +20,7 @@
 body {
   font-family: var(--roboto);
 }
+ 
 
 input,
 button,
@@ -43,7 +37,8 @@ a {
   transform: rotateY(180deg);
 }
 
-@keyframes fade-in {
+/* implements when this api are available stable */
+/* @keyframes fade-in {
   from {
     opacity: 0;
   }
@@ -81,7 +76,7 @@ a {
 
 #header {
   view-transition-name: main-header;
-}
+} */
 
 #tabs_scroll[data-index="stats"] {
   transition: transform 500ms ease-in-out;

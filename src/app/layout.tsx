@@ -7,8 +7,8 @@ import { ToastContainer } from "react-toastify";
 import { Header } from "./components/header";
 
 import "./globals.css";
-import "./styles/react_bottom_shet.css";
 import "react-toastify/dist/ReactToastify.css";
+import "../../src/app/styles/react_bottom_shet.css";
 
 const roboto = Roboto({
 	weight: ["400", "500", "700", "900"],
@@ -19,6 +19,12 @@ const roboto = Roboto({
 export const metadata: Metadata = {
 	title: "Pokédex",
 	description: "An application for test in my enterprise",
+	themeColor: [
+		{
+			color: "#18181b",
+			media: "(prefers-color-scheme: dark)",
+		},
+	],
 };
 
 export default function RootLayout({
@@ -27,15 +33,22 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="pt-BR">
+		<html lang="pt-BR" className="">
 			<body
-				className={`${roboto.className} ${roboto.variable} mx-auto w-full max-w-max dark:dark:bg-surface`}
+				id="root"
+				className={`${roboto.className} ${roboto.variable} mx-auto h-screen w-full max-w-max overflow-auto dark:dark:bg-surface`}
 			>
 				<ToastContainer
 					autoClose={5000}
 					toastClassName="border border-yellow bg-gray50 font-regular text-black h-[1.875rem] text-md rounded-[16px]"
 					hideProgressBar
 					position="top-right"
+					style={{
+						zIndex: 99999999,
+					}}
+					toastStyle={{
+						marginBottom: 12,
+					}}
 					closeOnClick
 					closeButton={false}
 				/>
