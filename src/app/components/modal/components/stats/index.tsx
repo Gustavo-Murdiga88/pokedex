@@ -9,7 +9,10 @@ interface IStatsProps {
 
 export function Stats({ data, total }: IStatsProps) {
 	return (
-		<div className="flex h-[368px] flex-1 flex-col gap-3 bp-1:gap-[31px] bp-2:h-[400px]">
+		<div
+			id="stats"
+			className="flex h-[368px] flex-1 flex-col gap-3 bp-1:gap-[31px] bp-2:h-[400px]"
+		>
 			{data?.map(({ base_stat, name }, index, array) => {
 				return (
 					<Slider
