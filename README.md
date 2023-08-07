@@ -24,6 +24,7 @@
 # Contributors
 
 <table>
+ <tbody>
   <tr>
     <td align="center">
         <img src="https://avatars.githubusercontent.com/u/74632138?v=4" width="100px;" alt="Gustavo Murdiga"/><br>
@@ -46,6 +47,7 @@
       </a>
     </td>
   </tr>
+</tbody>
 </table>
 <br/>
 # Desktop
