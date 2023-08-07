@@ -8,7 +8,7 @@
 
 
 <p>
- Esse projeto foi criado com intuito de realizar o desafio técnico da empresa onde trabalho, para contratação de um desenvolvedor pleno. Com isso juntamente com a nossa designer de UI/UX a Mariana Yoshino. Este foi criado com algumas maravilhosas tecnologias. Tais como: 
+ Esse projeto foi criado com intuito de realizar o desafio técnico da empresa onde trabalho para contratação de um Desenvolvedor Pleno. Juntamente com a nossa Designer de UI/UX, a Mariana Yoshino, foi desenvolvido utilizando tecnologias maravilhosas, como:
  </p>
 
 ### Technologies
