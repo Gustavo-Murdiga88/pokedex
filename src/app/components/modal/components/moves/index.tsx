@@ -14,6 +14,14 @@ interface IMovesProps {
 function Component({ moves, tag }: IMovesProps) {
 	return (
 		<ul
+			onTouchStart={(e) => {
+				e.stopPropagation();
+				document.getElementById("main")!.style.overflow = "hidden";
+			}}
+			onTouchEnd={(e) => {
+				e.stopPropagation();
+				document.getElementById("main")!.style.overflow = "auto";
+			}}
 			onTouchMove={(e) => {
 				e.stopPropagation();
 			}}
