@@ -16,7 +16,6 @@ function Component({ moves, tag }: IMovesProps) {
 		<ul
 			onTouchStart={(e) => {
 				e.stopPropagation();
-				alert("oi");
 				document.getElementById("main")!.style.overflow = "hidden";
 			}}
 			onTouchEnd={(e) => {

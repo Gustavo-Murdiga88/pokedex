@@ -99,7 +99,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 		<BottomSheet
 			sibling={screenSmallerThan524 ? <NavigationContainer /> : null}
 			open={open}
-			maxHeight={screenSmallerThan524 ? 790 : 935}
+			maxHeight={screenSmallerThan524 ? 770 : 860}
 			header={
 				<button
 					disabled={isFavoritesRoute}
@@ -122,6 +122,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 				</button>
 			}
 			scrollLocking
+			defaultSnap={({ maxHeight }) => maxHeight}
 			blocking
 			onDismiss={handleCancel}
 			snapPoints={({ minHeight, maxHeight }) => {
@@ -201,7 +202,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								Moves
 							</Button>
 						</div>
-						<div className="h-[412px] overflow-hidden bg-gray100 p-8 dark:bg-zinc900 bp-1:pb-[53px]">
+						<div className="h-[412px] overflow-hidden bg-gray100 p-8 dark:bg-zinc900 bp-1:pb-[53px] bp-2:h-[485px]">
 							<div
 								data-index={active}
 								id="tabs_scroll"

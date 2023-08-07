@@ -52,10 +52,7 @@ export default function RootLayout({
 					closeOnClick
 					closeButton={false}
 				/>
-				<main
-					id="main"
-					className="mx-auto max-w-card-content snap-y snap-mandatory"
-				>
+				<main id="main" className="mx-auto max-w-card-content">
 					<Header />
 					{children}
 				</main>
