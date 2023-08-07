@@ -18,18 +18,14 @@ function Component({ moves, tag }: IMovesProps) {
 			role="button"
 			tabIndex={-1}
 			className="fixed top-0 h-[348px] w-full touch-pan-y snap-center overflow-auto bp-2:h-[400px]"
-			onTouchStart={(e) => {
+			onTouchStartCapture={(e) => {
 				e.stopPropagation();
-				e.currentTarget.focus();
-			}}
-			onTouchMove={(e) => {
-				e.stopPropagation();
-				e.currentTarget.focus();
-			}}
-			onFocus={() => {
 				document.body.style.overflow = "hidden";
 			}}
-			onBlur={() => {
+			onTouchMoveCapture={(e) => {
+				e.stopPropagation();
+			}}
+			onTouchEndCapture={() => {
 				document.body.style.overflow = "auto";
 			}}
 		>
