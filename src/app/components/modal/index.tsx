@@ -96,10 +96,11 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 	}
 
 	useEffect(() => {
-		document.body.style.overflow = "hidden";
+		const scroller = document.getElementById("main");
+		scroller!.style.overflow = "hidden";
 
 		return () => {
-			document.body.style.overflow = "auto";
+			scroller!.style.overflow = "auto";
 		};
 	}, []);
 

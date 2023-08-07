@@ -52,7 +52,7 @@ export default function RootLayout({
 					closeOnClick
 					closeButton={false}
 				/>
-				<main className="mx-auto max-w-card-content">
+				<main id="main" className="mx-auto max-w-card-content">
 					<Header />
 					{children}
 				</main>
