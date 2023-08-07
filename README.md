@@ -48,21 +48,6 @@
   </tr>
 </table>
 
-<figure> 
-<img  height="190px" width="200px" alt="Gustavo Murdiga" />
-<figcaption>
-<div> 
-  <span> Mariana Yoshino </span>
-  
- 
-  </a>
-  <span> </span>
-</div>
-</figcaption>
-</figure>
-</div>
-
-
 # Desktop
 <img src="./src/app/assets/readme/template.gif"/>
 
