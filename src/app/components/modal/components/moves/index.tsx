@@ -15,7 +15,7 @@ function Component({ moves, tag }: IMovesProps) {
 	return (
 		<ul
 			id="moves"
-			className="h-[368px] w-full  touch-pan-y overflow-auto bp-1:max-h-full bp-2:h-[400px]"
+			className="h-[368px] w-full overflow-scroll bp-1:max-h-full bp-2:h-[400px]"
 		>
 			{moves.map(({ name }) => {
 				const move = name.replace("-", " ");
