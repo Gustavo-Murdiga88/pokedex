@@ -9,14 +9,15 @@ interface IEvolutionProps {
 export function Evolution({ evolutions }: IEvolutionProps) {
 	return (
 		<div
-			tabIndex={-1}
-			onTouchStart={(e) => {
+			onTouchStartCapture={(e) => {
 				e.stopPropagation();
-				e.currentTarget.focus();
+				document.body.style.overflow = "hidden";
 			}}
-			onTouchMove={(e) => {
+			onTouchMoveCapture={(e) => {
 				e.stopPropagation();
-				e.currentTarget.focus();
+			}}
+			onTouchEndCapture={() => {
+				document.body.style.overflow = "auto";
 			}}
 			id="evolution"
 			className="fixed top-0 flex h-[348px] w-full touch-pan-y  snap-center flex-wrap items-start justify-center gap-3 overflow-auto bp-2:h-[400px]"

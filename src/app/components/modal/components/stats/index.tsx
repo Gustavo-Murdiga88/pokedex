@@ -15,6 +15,16 @@ export function Stats({ data, total }: IStatsProps) {
 			}}
 			id="stats"
 			className="flex h-[348px] flex-1 snap-center flex-col gap-3 bp-1:gap-[31px] bp-2:h-[400px]"
+			onTouchStartCapture={(e) => {
+				e.stopPropagation();
+				document.body.style.overflow = "hidden";
+			}}
+			onTouchMoveCapture={(e) => {
+				e.stopPropagation();
+			}}
+			onTouchEndCapture={() => {
+				document.body.style.overflow = "auto";
+			}}
 		>
 			{data?.map(({ base_stat, name }, index, array) => {
 				return (
