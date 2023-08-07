@@ -26,6 +26,12 @@ function Component({ moves, tag }: IMovesProps) {
 				e.stopPropagation();
 				e.currentTarget.focus();
 			}}
+			onFocus={() => {
+				document.body.style.overflow = "hidden";
+			}}
+			onBlur={() => {
+				document.body.style.overflow = "auto";
+			}}
 		>
 			<ul>
 				{moves.map(({ name }) => {
