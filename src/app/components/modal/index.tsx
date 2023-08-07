@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useState } from "react";
+import { memo, useEffect, useState } from "react";
 
 import { Heart } from "lucide-react";
 import Img from "next/image";
@@ -94,6 +94,14 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 		});
 		unFavoritePokemon(data.id);
 	}
+
+	useEffect(() => {
+		document.body.style.overflow = "hidden";
+
+		return () => {
+			document.body.style.overflow = "auto";
+		};
+	}, []);
 
 	return (
 		<BottomSheet
