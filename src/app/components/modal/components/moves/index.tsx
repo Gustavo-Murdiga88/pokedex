@@ -30,6 +30,8 @@ function Component({ moves, tag }: IMovesProps) {
 			}}
 			onTouchMove={(e) => {
 				e.stopPropagation();
+				e.currentTarget.focus();
+				e.stopPropagation();
 			}}
 		>
 			<ul>
