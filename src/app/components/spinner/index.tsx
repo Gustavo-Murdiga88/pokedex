@@ -2,7 +2,7 @@ import Img from "next/image";
 
 export function Spinner() {
 	return (
-		<span className="absolute bottom-5 left-1/2 flex -translate-x-1/2 items-center justify-center">
+		<span className="absolute bottom-[110px] left-1/2 flex -translate-x-1/2 items-center justify-center bp-2:bottom-5">
 			<Img
 				className="animate-spinner"
 				src="/assets/icon.svg"

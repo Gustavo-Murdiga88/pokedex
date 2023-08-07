@@ -99,7 +99,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 		<BottomSheet
 			sibling={screenSmallerThan524 ? <NavigationContainer /> : null}
 			open={open}
-			maxHeight={screenSmallerThan524 ? 790 : 880}
+			maxHeight={screenSmallerThan524 ? 790 : 935}
 			header={
 				<button
 					disabled={isFavoritesRoute}
@@ -164,24 +164,6 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								alt="pokeboll"
 							/>
 						</header>
-						<button
-							disabled={isFavoritesRoute}
-							onClick={(e) => {
-								e.stopPropagation();
-
-								if (isFavorite) {
-									handleUnFavoritePokemon();
-									return;
-								}
-								handleFavoritePokemon();
-							}}
-							className="absolute right-[17px] top-[50px] rounded-md p-0 leading-none disabled:cursor-not-allowed"
-						>
-							<Heart
-								size={screenSmallerThan524 ? 35 : 40}
-								className={isFavorite ? "fill-red" : ""}
-							/>
-						</button>
 					</div>
 
 					<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 dark:bg-zinc800 bp-1:top-[240px]">

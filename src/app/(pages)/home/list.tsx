@@ -87,7 +87,7 @@ export function List({ data }: IPokemonsList) {
 						handleScroll();
 					}
 				}}
-				className="max-lg:grid-cols-1 mx-auto mb-[94px] grid min-h-[516px] w-full max-w-card-content grid-cols-3 gap-x-[23px] gap-y-[40px] overflow-auto rounded-lg px-3 py-2 max-[1380px]:grid-cols-2 max-[830px]:grid-cols-1 bp-2:mb-10 bp-2:px-8"
+				className="max-lg:grid-cols-1 mx-auto grid min-h-[516px] w-full max-w-card-content grid-cols-3 gap-x-[23px] gap-y-[40px] overflow-auto rounded-lg px-3 py-2 pb-[110px] max-[1380px]:grid-cols-2 max-[830px]:grid-cols-1 bp-2:px-8 bp-2:pb-10"
 				next={fetchMorePokemons}
 				dataLength={pokemonsList.length}
 				loader={<Spinner />}
