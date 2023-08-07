@@ -95,15 +95,6 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 		unFavoritePokemon(data.id);
 	}
 
-	useEffect(() => {
-		const scroller = document.getElementById("main");
-		scroller!.style.overflow = "hidden";
-
-		return () => {
-			scroller!.style.overflow = "auto";
-		};
-	}, []);
-
 	return (
 		<BottomSheet
 			sibling={screenSmallerThan524 ? <NavigationContainer /> : null}
@@ -175,7 +166,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 						</header>
 					</div>
 
-					<main className="absolute inset-x-0 top-[200px] flex h-[613px] flex-col bg-gray50 dark:bg-zinc800 bp-1:top-[240px]">
+					<main className="absolute inset-x-0 top-[200px] flex flex-col bg-gray50 dark:bg-zinc800 bp-1:top-[240px]">
 						<div className="my-[20px] flex justify-between px-[40px] min-[600px]:mt-[50px]">
 							<Button
 								active={active === "about"}
@@ -210,7 +201,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								Moves
 							</Button>
 						</div>
-						<div className="overflow-hidden bg-gray100 p-8  dark:bg-zinc900 bp-1:pb-[53px]">
+						<div className="h-[412px] overflow-hidden bg-gray100 p-8 dark:bg-zinc900 bp-1:pb-[53px]">
 							<div
 								data-index={active}
 								id="tabs_scroll"
