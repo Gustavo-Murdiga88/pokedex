@@ -202,13 +202,29 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								Moves
 							</Button>
 						</div>
-						<div className="h-[412px] overflow-hidden bg-gray100 p-8 dark:bg-zinc900 bp-1:pb-[53px] bp-2:h-[485px]">
+						<div
+							onTouchStart={(e) => {
+								e.stopPropagation();
+								e.currentTarget?.focus();
+							}}
+							className="h-[412px] overflow-hidden bg-gray100 p-8 dark:bg-zinc900 bp-1:pb-[53px] bp-2:h-[485px]"
+						>
 							<div
 								data-index={active}
 								id="tabs_scroll"
+								onTouchStart={(e) => {
+									e.stopPropagation();
+									e.currentTarget?.focus();
+								}}
 								className="flex h-full gap-8 bp-1:gap-16"
 							>
-								<div className="flex min-w-[336px] flex-1 bp-1:min-w-[460px]">
+								<div
+									onTouchStart={(e) => {
+										e.stopPropagation();
+										e.currentTarget?.focus();
+									}}
+									className="flex min-w-[336px] flex-1 bp-1:min-w-[460px]"
+								>
 									<About
 										data={{
 											ability: data.abilities,
