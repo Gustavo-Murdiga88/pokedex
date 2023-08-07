@@ -31,8 +31,7 @@
         <img src="https://avatars.githubusercontent.com/u/74632138?v=4" width="100px;" alt="Gustavo Murdiga"/><br>
           <sub>
               <a href="https://www.linkedin.com/in/gustavo-murdiga-055470178/">
-                <div> Gustavo Murdiga </div><br/>
-                <div> Full-Stack Developer</div>
+                <div> Gustavo Murdiga </div>
             </div>
         </sub>
       </a>
@@ -42,7 +41,6 @@
         <sub>
              <a href="https://www.linkedin.com/in/mariana-yoshino/?trk=public_profile_browsemap&originalSubdomain=br">
                 <div> Mariana Yoshino</div><br/>
-                <div>UI/UX </div>
             </div>
         </sub>
       </a>
