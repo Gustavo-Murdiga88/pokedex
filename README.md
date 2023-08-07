@@ -47,7 +47,7 @@
     </td>
   </tr>
 </table>
-
+<br/>
 # Desktop
 <img src="./src/app/assets/readme/template.gif"/>
 
