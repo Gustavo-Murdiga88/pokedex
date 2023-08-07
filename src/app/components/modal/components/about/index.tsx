@@ -24,11 +24,18 @@ interface IAboutProps {
 export function About({ data }: IAboutProps) {
 	return (
 		<div
+			tabIndex={-1}
+			role="button"
+			onTouchStart={(e) => {
+				e.stopPropagation();
+				e.currentTarget.focus();
+			}}
 			onTouchMove={(e) => {
 				e.stopPropagation();
+				e.currentTarget.focus();
 			}}
 			id="about"
-			className="fixed top-0 flex h-[348px] w-full snap-center flex-col gap-4 overflow-auto bp-2:h-[400px]"
+			className="fixed top-0 flex h-[348px]  w-full touch-pan-y snap-center flex-col gap-4 overflow-auto bp-2:h-[400px]"
 		>
 			<span className="inline-block break-words text-sm font-regular leading-[24px] text-gray500 dark:text-gray50 bp-1:text-lg">
 				{data.about[8].flavor_text}

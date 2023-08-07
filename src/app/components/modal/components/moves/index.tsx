@@ -20,18 +20,11 @@ function Component({ moves, tag }: IMovesProps) {
 			className="fixed top-0 h-[348px] w-full touch-pan-y snap-center overflow-auto bp-2:h-[400px]"
 			onTouchStart={(e) => {
 				e.stopPropagation();
-
 				e.currentTarget.focus();
-				document.getElementById("main")!.style.overflow = "hidden";
-			}}
-			onTouchEnd={(e) => {
-				e.stopPropagation();
-				document.getElementById("main")!.style.overflow = "auto";
 			}}
 			onTouchMove={(e) => {
 				e.stopPropagation();
 				e.currentTarget.focus();
-				e.stopPropagation();
 			}}
 		>
 			<ul>
