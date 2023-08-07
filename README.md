@@ -31,7 +31,7 @@
         <img src="https://avatars.githubusercontent.com/u/74632138?v=4" width="100px;" alt="Gustavo Murdiga"/><br>
           <sub>
               <a href="https://www.linkedin.com/in/gustavo-murdiga-055470178/">
-                <div> Gustavo Murdiga </div>
+                 Gustavo Murdiga
             </div>
         </sub>
       </a>
@@ -40,7 +40,7 @@
         <img src="https://media.licdn.com/dms/image/D4D03AQHp4ysVdSCQSA/profile-displayphoto-shrink_800_800/0/1680115683149?e=1697068800&v=beta&t=uQb_uNE1IV_LlDUZpYWdzvBIDQVW0SlSvtDGusTL9kY" width="100px;" alt="Gustavo Murdiga"/><br>
         <sub>
              <a href="https://www.linkedin.com/in/mariana-yoshino/?trk=public_profile_browsemap&originalSubdomain=br">
-                <div> Mariana Yoshino</div><br/>
+                 Mariana Yoshino</div>
             </div>
         </sub>
       </a>
