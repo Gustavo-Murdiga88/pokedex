@@ -17,6 +17,9 @@ function Component({ moves, tag }: IMovesProps) {
 			onTouchStart={(e) => {
 				e.stopPropagation();
 				document.getElementById("main")!.style.overflow = "hidden";
+				setTimeout(function () {
+					e.currentTarget.style.overflow = "scroll";
+				}, 100);
 			}}
 			onTouchEnd={(e) => {
 				e.stopPropagation();
