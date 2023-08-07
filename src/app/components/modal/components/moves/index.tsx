@@ -14,8 +14,11 @@ interface IMovesProps {
 function Component({ moves, tag }: IMovesProps) {
 	return (
 		<ul
+			onTouchMove={(e) => {
+				e.stopPropagation();
+			}}
 			id="moves"
-			className="fixed top-0 h-[348px] w-full overflow-auto bp-2:h-[400px]"
+			className="fixed top-0 h-[348px] w-full snap-center overflow-auto bp-2:h-[400px]"
 		>
 			{moves.map(({ name }) => {
 				const move = name.replace("-", " ");

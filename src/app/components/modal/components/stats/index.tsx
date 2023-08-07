@@ -10,8 +10,11 @@ interface IStatsProps {
 export function Stats({ data, total }: IStatsProps) {
 	return (
 		<div
+			onTouchMove={(e) => {
+				e.stopPropagation();
+			}}
 			id="stats"
-			className="flex h-[348px] flex-1 flex-col gap-3 bp-1:gap-[31px] bp-2:h-[400px]"
+			className="flex h-[348px] flex-1 snap-center flex-col gap-3 bp-1:gap-[31px] bp-2:h-[400px]"
 		>
 			{data?.map(({ base_stat, name }, index, array) => {
 				return (
