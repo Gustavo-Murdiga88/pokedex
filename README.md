@@ -23,6 +23,7 @@
 
 # Contributors
 
+
 <table>
  <tbody>
   <tr>
@@ -49,7 +50,8 @@
   </tr>
 </tbody>
 </table>
-<br/>
+
+
 # Desktop
 <img src="./src/app/assets/readme/template.gif"/>
 
