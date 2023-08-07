@@ -21,7 +21,24 @@
  - [x] <a href="https://zustand-demo.pmnd.rs/">Zustand</a>
 
 
-<link rel="stylesheet" href="src/app/styles/readme.css"/>
+<style>
+  .contributors{
+    display: flex;
+    gap: 10px;
+  }
+
+  .caption {
+    display: flex;
+    flex-direction:column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  figure img {
+    border-radius: 9999px;
+ }
+</style>
 
 # Contributors
 <div class="contributors">
@@ -41,7 +58,7 @@
 
 
 <figure> 
-<img height="190px" style="border-radius=99999px;" width="200px" alt="Gustavo Murdiga" src="https://media.licdn.com/dms/image/D4D03AQHp4ysVdSCQSA/profile-displayphoto-shrink_800_800/0/1680115683149?e=1697068800&v=beta&t=uQb_uNE1IV_LlDUZpYWdzvBIDQVW0SlSvtDGusTL9kY"/>
+<img height="190px" width="200px" alt="Gustavo Murdiga" src="https://media.licdn.com/dms/image/D4D03AQHp4ysVdSCQSA/profile-displayphoto-shrink_800_800/0/1680115683149?e=1697068800&v=beta&t=uQb_uNE1IV_LlDUZpYWdzvBIDQVW0SlSvtDGusTL9kY"/>
 <figcaption>
 <div class="caption"> 
   <span> Mariana Yoshino </span>
