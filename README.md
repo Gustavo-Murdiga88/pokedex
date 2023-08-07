@@ -26,22 +26,20 @@
 <table>
   <tr>
     <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/74632138?v=4"" width="100px;" alt="Gustavo Murdiga"/><br>
+        <img src="https://avatars.githubusercontent.com/u/74632138?v=4" width="100px;" alt="Gustavo Murdiga"/><br>
         <sub>
            <div> Gustavo Murdiga </div>
               <a href="https://www.linkedin.com/in/gustavo-murdiga-055470178/">
-              <img  src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
                 <div> Full-Stack Developer</div>
             </div>
         </sub>
       </a>
     </td>
     <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/74632138?v=4"" width="100px;" alt="Gustavo Murdiga"/><br>
+        <img src="https://media.licdn.com/dms/image/D4D03AQHp4ysVdSCQSA/profile-displayphoto-shrink_800_800/0/1680115683149?e=1697068800&v=beta&t=uQb_uNE1IV_LlDUZpYWdzvBIDQVW0SlSvtDGusTL9kY" width="100px;" alt="Gustavo Murdiga"/><br>
         <sub>
            <div> Mariana Yoshino  </div>
              <a href="https://www.linkedin.com/in/mariana-yoshino/?trk=public_profile_browsemap&originalSubdomain=br">
-              <img  src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"/>
                 <div>UI/UX </div>
             </div>
         </sub>
@@ -49,6 +47,20 @@
     </td>
   </tr>
 </table>
+
+<figure> 
+<img  height="190px" width="200px" alt="Gustavo Murdiga" />
+<figcaption>
+<div> 
+  <span> Mariana Yoshino </span>
+  
+ 
+  </a>
+  <span> </span>
+</div>
+</figcaption>
+</figure>
+</div>
 
 
 # Desktop
