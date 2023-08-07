@@ -8,7 +8,7 @@
 
 
 <p>
- Esse projeto foi criado com intuito de realizar o desafio técnico da empresa onde trabalho, para contratação de um desenvolvedor pleno. Com isso juntamente com a nosso designer de UI/UX a Mariana Yoshino. Este foi criado com algumas maravilhosas tecnologias. Tais como: 
+ Esse projeto foi criado com intuito de realizar o desafio técnico da empresa onde trabalho, para contratação de um desenvolvedor pleno. Com isso juntamente com a nossa designer de UI/UX a Mariana Yoshino. Este foi criado com algumas maravilhosas tecnologias. Tais como: 
  </p>
 
 ### Technologies
@@ -47,21 +47,6 @@
     </td>
   </tr>
 </table>
-
-<figure> 
-<img  height="190px" width="200px" alt="Gustavo Murdiga" />
-<figcaption>
-<div> 
-  <span> Mariana Yoshino </span>
-  
- 
-  </a>
-  <span> </span>
-</div>
-</figcaption>
-</figure>
-</div>
-
 
 # Desktop
 <img src="./src/app/assets/readme/template.gif"/>
