@@ -21,7 +21,7 @@
  - [x] <a href="https://zustand-demo.pmnd.rs/">Zustand</a>
 
 
-<link rel="stylesheet" href="./src/app/styles/readme.css"/>
+<link rel="stylesheet" href="src/app/styles/readme.css"/>
 
 # Contributors
 <div class="contributors">
