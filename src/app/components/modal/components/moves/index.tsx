@@ -26,7 +26,7 @@ function Component({ moves, tag }: IMovesProps) {
 				e.stopPropagation();
 			}}
 			id="moves"
-			className="fixed top-0 h-[348px] w-full snap-center overflow-auto bp-2:h-[400px]"
+			className="fixed top-0 h-[348px] w-full touch-pan-y snap-center overflow-auto bp-2:h-[400px]"
 		>
 			{moves.map(({ name }) => {
 				const move = name.replace("-", " ");
