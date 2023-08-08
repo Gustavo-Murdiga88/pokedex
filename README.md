@@ -28,26 +28,31 @@
  <tbody>
   <tr>
     <td align="center">
-        <img src="https://avatars.githubusercontent.com/u/74632138?v=4" width="100px;" alt="Gustavo Murdiga"/><br>
+        <img src="https://avatars.githubusercontent.com/u/74632138?v=4" width="100px;" alt="Gustavo Murdiga"/><br/>
           <sub>
               <a href="https://www.linkedin.com/in/gustavo-murdiga-055470178/">
                  Gustavo Murdiga
-            </div>
+              </a>
         </sub>
-      </a>
     </td>
     <td align="center">
-        <img src="https://media.licdn.com/dms/image/D4D03AQHp4ysVdSCQSA/profile-displayphoto-shrink_800_800/0/1680115683149?e=1697068800&v=beta&t=uQb_uNE1IV_LlDUZpYWdzvBIDQVW0SlSvtDGusTL9kY" width="100px;" alt="Gustavo Murdiga"/><br>
+        <img src="https://media.licdn.com/dms/image/D4D03AQHp4ysVdSCQSA/profile-displayphoto-shrink_800_800/0/1680115683149?e=1697068800&v=beta&t=uQb_uNE1IV_LlDUZpYWdzvBIDQVW0SlSvtDGusTL9kY" width="100px;" alt="Gustavo Murdiga"/>
+        <br/>
         <sub>
              <a href="https://www.linkedin.com/in/mariana-yoshino/?trk=public_profile_browsemap&originalSubdomain=br">
-                 Mariana Yoshino</div>
-            </div>
+                 Mariana Yoshino
+            </a>  
         </sub>
-      </a>
     </td>
   </tr>
 </tbody>
 </table>
+
+# Protótipo
+![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) <br/>
+<a href="https://www.figma.com/file/pV4ki5Q0ictAua3I1tjrcu/Pokemon?node-id=86%3A3206&fuid=1163938666789843694" target="_blank"> 
+  Protótipo desenvolvido pela nossa UX, fique a vontade para copiar e colocar seus conhecimentos em prática com esse layout
+</a>
 
 # Desktop
 <img src="./src/app/assets/readme/template.gif"/>
