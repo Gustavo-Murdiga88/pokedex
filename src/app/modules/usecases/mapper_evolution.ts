@@ -9,14 +9,17 @@ export type EvolutionProps = {
 	type: TagsTypeProps;
 };
 
-export function mapperEvolution(this: EvolutionProps[], teste: IEvolvesProps) {
+export function mapperEvolution(
+	this: EvolutionProps[],
+	evolves: IEvolvesProps,
+) {
 	this.push({
-		id: +teste.species.url.split("/")[6],
-		lastEvolution: teste.evolves_to.length === 0,
-		name: teste.species.name,
+		id: +evolves.species.url.split("/")[6],
+		lastEvolution: evolves.evolves_to.length === 0,
+		name: evolves.species.name,
 		type: "bug",
 	});
-	teste.evolves_to.forEach(({ evolves_to, species }) => {
+	evolves.evolves_to.forEach(({ evolves_to, species }) => {
 		this.push({
 			id: +species.url.split("/")[6],
 			lastEvolution: evolves_to.length === 0,
