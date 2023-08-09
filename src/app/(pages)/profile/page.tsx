@@ -9,7 +9,7 @@ import { HeaderNavigation } from "@/app/components/navigation/header";
 
 export default function Profile() {
 	return (
-		<main className="mx-auto px-8 pb-[100px]">
+		<main className="mx-auto pb-[100px]">
 			<HeaderNavigation />
 			<aside className="mt-[136px] px-8 bp-2:mr-auto bp-2:mt-[80px] bp-2:w-[671px]">
 				<div className="relative mb-[2rem] flex flex-col items-center justify-center bp-2:items-start">

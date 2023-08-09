@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useEffect, useState } from "react";
+import { memo, useState } from "react";
 
 import { Heart } from "lucide-react";
 import Img from "next/image";
@@ -221,7 +221,6 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								<div
 									onTouchStart={(e) => {
 										e.stopPropagation();
-										e.currentTarget?.focus();
 									}}
 									className="flex min-w-[336px] flex-1 bp-1:min-w-[460px]"
 								>

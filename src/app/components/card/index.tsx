@@ -44,16 +44,29 @@ function Component({ data }: ICardProps) {
 	const hash = String(data.id).padStart(3, "0").padStart(4, "#");
 	const isFavorite = pokemons.some(({ id }) => id === data.id);
 
-	const [modalOpen, setOpen] = useState(false);
+	const [modalOpen, setOpen] = useState({ open: false, render: false });
 
 	const { cardColor } = MappingTag[data?.types[0].name ?? ""];
 
 	function handleOpenModal() {
-		setOpen(true);
+		setOpen({
+			open: true,
+			render: true,
+		});
 	}
 
 	function handleCloseModal() {
-		setOpen(false);
+		setOpen({
+			open: false,
+			render: true,
+		});
+
+		setTimeout(() => {
+			setOpen({
+				open: false,
+				render: false,
+			});
+		}, 1000);
 	}
 
 	function handleFavoritePokemon() {
@@ -147,16 +160,17 @@ function Component({ data }: ICardProps) {
 					/>
 				</div>
 			</button>
-
-			<BottomSheetModal
-				open={modalOpen}
-				handleCancel={handleCloseModal}
-				pokemon={{
-					data,
-					hash,
-					isFavorite,
-				}}
-			/>
+			{modalOpen.render && (
+				<BottomSheetModal
+					open={modalOpen.open}
+					handleCancel={handleCloseModal}
+					pokemon={{
+						data,
+						hash,
+						isFavorite,
+					}}
+				/>
+			)}
 		</>
 	);
 }
