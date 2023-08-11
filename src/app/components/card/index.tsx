@@ -118,6 +118,7 @@ function Component({ data }: ICardProps) {
 				</div>
 				<div className="relative ml-auto h-full max-w-[214px] flex-1">
 					<Img
+						unoptimized
 						style={{
 							width: 134,
 							height: 132,
@@ -130,6 +131,7 @@ function Component({ data }: ICardProps) {
 					/>
 
 					<Img
+						unoptimized
 						className="absolute bottom-0 left-0"
 						src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`}
 						height={116}

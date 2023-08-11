@@ -37,6 +37,7 @@ export function PokeAvatar({
 				} overflow-hidden rounded-full border border-blue300 bg-gray50 dark:border-blue100 dark:bg-zinc900`}
 			>
 				<Img
+					unoptimized
 					id="pokemon"
 					src={img}
 					style={{

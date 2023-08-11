@@ -81,6 +81,7 @@ export function NotificationsComponent() {
 					return (
 						<DropDown.Item key={data.id} lastChild={array.length - 1 === index}>
 							<Img
+								unoptimized
 								className="rounded-full border-[2px] border-blue200"
 								id="pokemon"
 								src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`}

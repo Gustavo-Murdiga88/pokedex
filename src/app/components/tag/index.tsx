@@ -20,6 +20,7 @@ function Component({ type }: ITagProps) {
 			}}
 		>
 			<Img
+				unoptimized
 				className="object-cover bp-2:translate-y-[1px]"
 				src={icon}
 				alt={name}

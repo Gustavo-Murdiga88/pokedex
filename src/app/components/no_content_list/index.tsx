@@ -6,6 +6,7 @@ export function NoContent() {
 		<div className="mt-[110px] flex w-full flex-col items-start justify-normal gap-4 px-4 pb-[115px] bp-2:flex-row bp-2:gap-[46px]">
 			<div className="self-center">
 				<Img
+					unoptimized
 					className="max-h-[180px] w-full min-w-full max-w-[180px] flex-1 bp-2:max-h-[287px] bp-2:max-w-[330px]"
 					src="assets/pikachu.svg"
 					alt="pikachu"

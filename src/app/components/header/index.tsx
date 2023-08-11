@@ -9,6 +9,7 @@ export function Header() {
 			className="mt-8 flex items-center justify-center max-[600px]:mt-0"
 		>
 			<Img
+				unoptimized
 				style={{
 					height: 60,
 					width: 149,

@@ -15,6 +15,7 @@ export default function Profile() {
 				<div className="relative mb-[2rem] flex flex-col items-center justify-center bp-2:items-start">
 					<div className="mb-[32px] rounded-full border-[3.04px] border-blue300 bp-2:mb-[40px]">
 						<Img
+							unoptimized
 							src="https://avatars.githubusercontent.com/u/74632138?v=4"
 							width={140}
 							height={140}
@@ -84,7 +85,13 @@ export default function Profile() {
 						href="https://www.linkedin.com/in/gustavo-murdiga-055470178/"
 						target="_blank"
 					>
-						<Img src={linkedin} height={32} width={32} alt="leading" />
+						<Img
+							unoptimized
+							src={linkedin}
+							height={32}
+							width={32}
+							alt="leading"
+						/>
 					</Link>
 					<Link
 						className="rounded-lg leading-none"
@@ -92,6 +99,7 @@ export default function Profile() {
 						target="_blank"
 					>
 						<Img
+							unoptimized
 							src={git}
 							height={32}
 							width={32}
@@ -105,6 +113,7 @@ export default function Profile() {
 						target="_blank"
 					>
 						<Img
+							unoptimized
 							src={notion}
 							height={32}
 							width={32}

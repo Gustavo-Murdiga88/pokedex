@@ -158,6 +158,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 								</div>
 							</div>
 							<Img
+								unoptimized
 								className="absolute bottom-[-10px] left-[20px] h-[155px] w-[135px] blur-[6px] bp-1:h-[181px] bp-1:w-[181px]"
 								src={pokebool}
 								width={181}
@@ -250,6 +251,7 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 						</div>
 					</main>
 					<Img
+						unoptimized
 						draggable={false}
 						id="pokemon"
 						className="absolute left-[20px] top-[25px] h-[202px] w-[204px] bp-1:h-[251px] bp-1:w-[236px]"
