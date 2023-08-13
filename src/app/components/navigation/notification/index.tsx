@@ -75,7 +75,7 @@ export function NotificationsComponent() {
 						? "absolute top-[10px] right-[10px]"
 						: "fill-red absolute top-[10px] right-[10px]";
 					const title = remove
-						? "Pokemon Removido dos favoritos!"
+						? `Pokemon removidodos favoritos!`
 						: "Pokemon adicionado aos favoritos!";
 
 					return (
@@ -94,10 +94,10 @@ export function NotificationsComponent() {
 								alt="Pokemon"
 							/>
 							<div className="flex flex-col justify-center gap-1">
-								<span className="inline-block pr-[35px] text-md font-bold text-black dark:text-gray50">
+								<span className="inline-block pr-[60px] text-md font-bold text-black dark:text-gray50">
 									{title}
 								</span>
-								<span className="inline-block text-md font-bold text-black dark:text-gray50">
+								<span className="inline-block pr-3 text-md font-bold text-black dark:text-gray50">
 									{message}
 								</span>
 							</div>

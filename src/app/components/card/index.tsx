@@ -100,14 +100,13 @@ function Component({ data }: ICardProps) {
 				style={{
 					backgroundColor: Theme.colors[cardColor],
 				}}
-				className="flex h-[132px] justify-start gap-[8px] rounded-[32px]"
+				className="flex h-[8.25rem] justify-start gap-[8px] rounded-[32px]"
 			>
-				<div className="flex min-w-[136px] flex-col items-start gap-[8px]  pb-[24px] pl-[24px] pt-[16px]">
+				<div className="flex basis-[52%] flex-col items-start gap-[8px] truncate pb-[24px]  pl-[24px] pt-[16px]">
 					<span className="text-sm font-regular leading-none text-black">
 						{hash}
 					</span>
-
-					<span className="text-3xl font-bold capitalize leading-none">
+					<span className="w-full truncate text-left text-3xl font-bold capitalize leading-none">
 						{data.name}
 					</span>
 					<div className="flex items-center justify-start gap-[8px]">

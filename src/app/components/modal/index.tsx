@@ -73,8 +73,9 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 			return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-fire";
 		}
 
-		if (type === "water")
+		if (type === "water") {
 			return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-water";
+		}
 
 		return "relative flex h-[200px] justify-end bp-1:h-[240px] bg-grass";
 	})();
@@ -146,9 +147,9 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 						}}
 					>
 						<header className={headerClassName}>
-							<div className="mb-2 mr-[12px] mt-auto flex h-[105px] flex-col items-start gap-1 bp-1:mb-4 bp-1:ml-auto min-[524px]:mr-[39px]">
+							<div className="mb-2 mr-[12px] mt-auto  flex h-[105px] basis-[43%] flex-col items-start gap-1 truncate bp-1:mb-4 bp-1:ml-auto min-[524px]:mr-[39px]">
 								<span className="text-md font-regular text-gray50">{hash}</span>
-								<span className="mb-2 text-3xl font-extraBold capitalize leading-none text-gray50 bp-1:text-5xl">
+								<span className="mb-2 inline-block w-full truncate text-3xl font-extraBold capitalize leading-none text-gray50 bp-1:text-5xl">
 									{data.name}
 								</span>
 								<div className="flex w-full gap-2">

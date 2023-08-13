@@ -7,5 +7,5 @@ interface IDropDownRoot {
 }
 
 export function DropDownRoot({ children }: IDropDownRoot) {
-	return <DropdownMenu.Root modal={false}>{children}</DropdownMenu.Root>;
+	return <DropdownMenu.Root modal>{children}</DropdownMenu.Root>;
 }

@@ -34,7 +34,7 @@ export const MappingTag: MappingTagProps = {
 	},
 
 	flying: {
-		cardColor: "black",
+		cardColor: "cyan300",
 		name: "Flying",
 		color: "cyan50",
 		icon: "/assets/tags/flying.svg",
