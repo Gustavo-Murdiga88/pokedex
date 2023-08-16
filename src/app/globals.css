@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+::root {
+  --modalMainControls: 48px;
+  --modalMainControlsWidth: 0px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +15,7 @@
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+
 }
 
 *::-webkit-scrollbar {
@@ -19,9 +25,6 @@
 body {
   font-family: var(--roboto);
 }
- 
-
- 
 
 input,
 button,
@@ -108,28 +111,27 @@ a {
 @media (max-width: 524px) {
   #tabs_scroll[data-index="stats"] {
     transition: transform 500ms ease-in-out;
-  
+
     transform: translate3d(-368px, 0px, 0px);
   }
-  
+
   #tabs_scroll[data-index="evolution"] {
     transition: transform 500ms ease-in-out;
-  
+
     transform: translate3d(-736px, 0px, 0px);
   }
-  
+
   #tabs_scroll[data-index="moves"] {
     transition: transform 500ms ease-in-out;
-  
+
     transform: translate3d(-1104px, 0px, 0px);
   }
-  
+
   #tabs_scroll[data-index="about"] {
     transition: transform 500ms ease-in-out;
-  
+
     transform: translate3d(0px, 0px, 0px);
   }
-  
 }
 
 .react-modal-sheet-container {
@@ -137,9 +139,9 @@ a {
   box-shadow: 0 0 0 0 !important;
 }
 
-.react-modal-sheet-backdrop{
+.react-modal-sheet-backdrop {
   backdrop-filter: blur(2px);
-  background-color: rgba(0, 0, 0, 0.70) !important;
+  background-color: rgba(0, 0, 0, 0.7) !important;
 }
 
 /* 
@@ -147,8 +149,8 @@ a {
   /* custom styles */
 /* } */
 /* .react-modal-sheet-drag-indicator { */
-  /* custom styles */
-/* } */ 
+/* custom styles */
+/* } */
 
 /* .react-modal-sheet-content {
   custom styles 
@@ -157,13 +159,20 @@ a {
   touch-action: pan-y !important;
 } */
 
-#moves, #evolution, #about, #stats {
+#moves,
+#evolution,
+#about,
+#stats {
   -webkit-overflow-scrolling: touch;
 }
 
-
-div[data-length='0']:matches([id='favoritesHeader']) {
+div[data-length="0"]:matches([id="favoritesHeader"]) {
   background-color: #265dfc;
-    visibility: hidden;
+  visibility: hidden;
 }
 
+#modalMainControls::before {
+  transition: all 0.5s ease-in;
+  width: calc(var(--modalMainControlsWidth));
+  left: var(--modalMainControls);
+}

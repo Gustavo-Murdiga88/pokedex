@@ -1,6 +1,6 @@
 "use client";
 
-import { memo, useState } from "react";
+import { ElementRef, memo, useEffect, useRef, useState } from "react";
 
 import { Heart } from "lucide-react";
 import Img from "next/image";
@@ -19,6 +19,7 @@ import { Button } from "./components/button";
 import { Evolution } from "./components/evolution";
 import { Moves } from "./components/moves";
 import { Stats } from "./components/stats";
+import { activeIndexModal } from "@/app/util/activeIndexModal";
 
 import { NavigationContainer } from "../navigation/container";
 import { Tag } from "../tag";
@@ -38,6 +39,9 @@ interface IModalProps {
 function Component({ handleCancel, open, pokemon }: IModalProps) {
 	const path = usePathname();
 	const isFavoritesRoute = path.includes("favorites");
+
+	const divContainer = useRef<ElementRef<"div">>(null);
+	const aboutButton = useRef<ElementRef<"button">>(null);
 
 	const { data, isFavorite, hash } = pokemon;
 
@@ -95,6 +99,12 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 		});
 		unFavoritePokemon(data.id);
 	}
+
+	useEffect(() => {
+		setTimeout(() => {
+			aboutButton.current?.click();
+		}, 0);
+	}, []);
 
 	return (
 		<BottomSheet
@@ -170,10 +180,20 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 					</div>
 
 					<main className="absolute inset-x-0 top-[200px] flex flex-col bg-gray50 dark:bg-zinc800 bp-1:top-[240px]">
-						<div className="my-[20px] flex justify-between px-[40px] min-[600px]:mt-[50px]">
+						<div
+							ref={divContainer}
+							id="modalMainControls"
+							className="relative my-[20px] flex justify-between px-[40px] before:absolute before:bottom-px before:h-0.5 before:w-[43px] before:-translate-y-0.5 before:bg-red dark:before:bg-gray50 min-[600px]:mt-[50px]"
+						>
 							<Button
+								id="about"
+								ref={aboutButton}
 								active={active === "about"}
-								onClick={() => {
+								onClick={(e) => {
+									activeIndexModal({
+										left: e.currentTarget.offsetLeft,
+										width: e.currentTarget.offsetWidth,
+									});
 									handleChangeTabs("about");
 								}}
 							>
@@ -181,7 +201,11 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 							</Button>
 							<Button
 								active={active === "stats"}
-								onClick={() => {
+								onClick={(e) => {
+									activeIndexModal({
+										left: e.currentTarget.offsetLeft,
+										width: e.currentTarget.offsetWidth,
+									});
 									handleChangeTabs("stats");
 								}}
 							>
@@ -189,7 +213,11 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 							</Button>
 							<Button
 								active={active === "evolution"}
-								onClick={() => {
+								onClick={(e) => {
+									activeIndexModal({
+										left: e.currentTarget.offsetLeft,
+										width: e.currentTarget.offsetWidth,
+									});
 									handleChangeTabs("evolution");
 								}}
 							>
@@ -197,7 +225,11 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 							</Button>
 							<Button
 								active={active === "moves"}
-								onClick={() => {
+								onClick={(e) => {
+									activeIndexModal({
+										left: e.currentTarget.offsetLeft,
+										width: e.currentTarget.offsetWidth,
+									});
 									handleChangeTabs("moves");
 								}}
 							>
