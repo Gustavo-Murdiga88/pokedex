@@ -106,7 +106,7 @@ function Component({ data }: ICardProps) {
 					<span className="text-sm font-regular leading-none text-black">
 						{hash}
 					</span>
-					<span className="w-full truncate text-left text-3xl font-bold capitalize leading-none">
+					<span className="w-full truncate text-left text-3xl font-bold capitalize leading-tight">
 						{data.name}
 					</span>
 					<div className="mt-1 flex items-center justify-start gap-[8px]">
