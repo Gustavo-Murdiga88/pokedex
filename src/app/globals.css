@@ -176,3 +176,5 @@ div[data-length="0"]:matches([id="favoritesHeader"]) {
   width: calc(var(--modalMainControlsWidth));
   left: var(--modalMainControls);
 }
+
+

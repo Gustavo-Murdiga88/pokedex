@@ -14,7 +14,7 @@ export function DropDownContent({ children }: IDropDownContent) {
 				loop
 				sideOffset={5}
 				alignOffset={10}
-				className="inset-0 z-50 h-screen w-screen snap-y snap-mandatory scroll-p-8 overflow-y-auto scroll-smooth rounded-lg border border-gray300 bg-gray100 p-4 dark:border-zinc800 dark:bg-zinc800 bp-2:max-h-[370px] bp-2:w-[380px]"
+				className="z-50 h-screen w-screen snap-y snap-mandatory scroll-p-8 overflow-y-auto scroll-smooth rounded-lg border border-gray300 bg-gray100 p-4 pb-[140px] dark:border-zinc800 dark:bg-zinc800 bp-2:max-h-[370px] bp-2:w-[380px] bp-2:pb-4"
 				align="end"
 			>
 				{children}

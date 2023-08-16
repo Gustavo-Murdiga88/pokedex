@@ -7,7 +7,6 @@ import { Tag } from "components/tag";
 import genere from "assets/icons/genere.svg";
 import heightsvg from "assets/icons/height.svg";
 import weightsvg from "assets/icons/weight.svg";
-
 interface IAboutProps {
 	data: {
 		about: IPokemonFormattedProps["about"];
