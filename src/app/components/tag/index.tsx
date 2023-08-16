@@ -21,7 +21,7 @@ function Component({ type }: ITagProps) {
 		>
 			<Img
 				unoptimized
-				className="object-cover bp-2:translate-y-[1px]"
+				className="-translate-y-px object-cover"
 				src={icon}
 				alt={name}
 				style={{
@@ -31,7 +31,7 @@ function Component({ type }: ITagProps) {
 				width={18}
 				height={20}
 			/>
-			<span className="text-sm font-regular bp-2:text-lg">{name}</span>
+			<span className="text-sm font-regular">{name}</span>
 		</span>
 	);
 }

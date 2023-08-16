@@ -109,7 +109,7 @@ function Component({ data }: ICardProps) {
 					<span className="w-full truncate text-left text-3xl font-bold capitalize leading-none">
 						{data.name}
 					</span>
-					<div className="flex items-center justify-start gap-[8px]">
+					<div className="mt-1 flex items-center justify-start gap-[8px]">
 						{data.types.map(({ name }) => {
 							return <Tag type={name} key={name} />;
 						})}
