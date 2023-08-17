@@ -157,12 +157,12 @@ function Component({ handleCancel, open, pokemon }: IModalProps) {
 						}}
 					>
 						<header className={headerClassName}>
-							<div className="mb-2 mr-[12px] mt-auto flex h-[105px] max-w-[43%] flex-col gap-1 truncate bp-1:mb-4 bp-1:ml-auto min-[524px]:mr-[39px]">
+							<div className="mb-2 mr-[12px] mt-auto flex h-[105px] max-w-[43%] flex-col truncate bp-1:mb-4 bp-1:ml-auto min-[524px]:mr-[39px]">
 								<span className="text-md font-regular text-gray50">{hash}</span>
-								<span className="mb-2 inline-block w-full truncate text-3xl font-extraBold capitalize leading-none text-gray50 bp-1:text-5xl">
+								<strong className=" inline-block w-full truncate font-extraBold capitalize leading-tight text-gray50 bp-1:text-5xl">
 									{data.name}
-								</span>
-								<div className="flex w-full gap-2">
+								</strong>
+								<div className="mt-2 flex w-full gap-2">
 									{data.types.map(({ name }) => {
 										return <Tag type={name} key={name} />;
 									})}
